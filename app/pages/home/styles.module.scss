@@ -1,0 +1,23 @@
+@import "./../../styles/variable.scss";
+
+.home{
+  height: 100vh;
+  max-height: 1120px;
+  margin: 0;
+  position: relative;
+  &__sheet{
+    position: relative;
+    height: 100%;
+    position: absolute;
+    background-color: $base-color;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  &__main{
+    height: 100%;
+    position: relative;
+  }
+  
+}
