@@ -1,0 +1,33 @@
+@import "./variable.scss";
+  
+*{
+  box-sizing: border-box;
+}
+
+html, body{
+  padding: 0;
+  margin: 0;
+  background-color: $white-bg;
+}
+
+body{
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6{
+  padding: 0;
+}
+
+ul, li{
+  padding: 0;
+  list-style-type: none;
+}
+
+.container{
+  max-width: 1635px;
+  padding: 0 15px;
+  width: 100%;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+
