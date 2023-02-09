@@ -10,7 +10,7 @@ const Home: FC = () => {
       <div className={styles.home}>
         <div className={styles.home__sheet}>
           <PanelNav/>
-          <div className="container">
+          <div className={( "container")}>
             <main className={styles.home__main}>
               <div className="">
                 home

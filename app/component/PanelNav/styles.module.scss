@@ -1,5 +1,13 @@
 .panel{
+  position: relative;
+  padding-top: 30px;
   &__toolbar{
     display: flex;
+  }
+  &__login{
+    background-image: url("../../public/login.png");
+    width: 114px;
+    height: 83px;
+    background-size: cover;
   }
 }
