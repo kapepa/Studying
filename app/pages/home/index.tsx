@@ -12,9 +12,8 @@ const Home: FC = () => {
           <PanelNav/>
           <div className={( "container")}>
             <main className={styles.home__main}>
-              Home
               <div className="">
-                
+                Home
               </div>
             </main>
           </div>
