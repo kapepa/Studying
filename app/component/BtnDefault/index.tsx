@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import styles from "./styles.module.scss";
 
 enum BtnType {"submit", "reset", "button"}
@@ -14,15 +14,14 @@ interface IBtnDefault {
 const BtnDefault: FC<IBtnDefault> = ({text, type = "button", size = "middle"}) => {
 
   const btnSize = classNames({
-    "default--small": size === "small",
-    "default--middle": size === "middle",
-    "default--large": size === "large",
+    "btn-default--small": size === "small",
+    "btn-default--middle": size === "middle",
+    "btn-default--large": size === "large",
   });
-
 
   return (
   <button 
-    className={`${styles.default} ${btnSize}`}
+    className={`${styles["btn-default"]} ${styles[btnSize]}`}
     type={type}
   >{text}</button>
   )
