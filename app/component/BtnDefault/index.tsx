@@ -9,9 +9,10 @@ interface IBtnDefault {
   text: string,
   size?: keyof typeof BtnSize,
   type?: keyof typeof BtnType,
+  click?: (e: React.MouseEvent<HTMLButtonElement>) => void,
 }
 
-const BtnDefault: FC<IBtnDefault> = ({text, type = "button", size = "middle"}) => {
+const BtnDefault: FC<IBtnDefault> = ({text, type = "button", size = "middle", click}) => {
 
   const btnSize = classNames({
     "btn-default--small": size === "small",
@@ -20,7 +21,8 @@ const BtnDefault: FC<IBtnDefault> = ({text, type = "button", size = "middle"}) =
   });
 
   return (
-  <button 
+  <button
+    onClick={click}
     className={`${styles["btn-default"]} ${styles[btnSize]}`}
     type={type}
   >{text}</button>
