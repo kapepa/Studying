@@ -1,5 +1,6 @@
 @import "./variable.scss";
 @import "./font.scss";
+@import "./mixing.scss";
 
 *{
   box-sizing: border-box;
@@ -10,16 +11,15 @@ html, body{
   margin: 0;
 }
 
+html{
+  font-size: 16px;
+}
+
 body {
   background-color: $white-bg;
   font-family: 'Poppins' sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 16px;
-}
-
-body{
-  font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -33,14 +33,35 @@ ul, li{
 
 .container{
   max-width: 1635px;
-  padding: 0 15px;
+  padding: 0 toRem(15);
   width: 100%;
   margin: 0 auto;
   flex-grow: 1;
 }
 
-@media screen and (max-width: 998px) {
-  body{
+@media only screen and (max-width : 1440px) {
+  html{
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html{
     font-size: 14px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  html{
+    font-size: 12px;
+  }
+}
+
+
+

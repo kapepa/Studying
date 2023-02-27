@@ -1,4 +1,6 @@
+$root-font-size: 16;
+
 @function toRem($value) {
-  $remValue: ($value / 14) + rem; 
+  $remValue: calc($value / $root-font-size) + rem; 
   @return $remValue;
 }
