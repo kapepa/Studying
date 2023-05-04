@@ -1,12 +1,25 @@
 import Head from "next/head";
-import React, { FC, ReactNode } from "react"
+import React, {FC, ReactNode, useCallback, useState} from "react"
 
 interface IDefault {
   children: ReactNode,
   title: string,
 }
 
+const BodyLayout = React.createContext<{bodyClick: (cb: () => void) => void }>(null);
+
 const Default: FC<IDefault> = ({children, title}) => {
+  const [date, setDate] = useState<number>(Date.now());
+  const reload = useCallback((cb) => {
+    console.log('cb BodyLayout')
+    cb()
+  }, [date]);
+
+  const bodyClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    console.log('bodyClick')
+    setDate(Date.now())
+  }
+
   return (
     <>
     <Head>
@@ -16,8 +29,11 @@ const Default: FC<IDefault> = ({children, title}) => {
       <meta property="og:title" content={`My page ${title}`} key="title" />
       <link rel="icon" href="/login32x44.ico" />
     </Head>
-    <div className="">{children}</div>
+      <BodyLayout.Provider value={{bodyClick: reload}}>
+        <div onClick={bodyClick} className="">{children}</div>
+      </BodyLayout.Provider>
     </>);
 }
 
-export default Default
+export { BodyLayout };
+export default Default;
