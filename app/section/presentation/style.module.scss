@@ -1,0 +1,97 @@
+@import "../../styles/font.scss";
+@import "../../styles/variable.scss";
+@import "../../styles/mixing.scss";
+
+.presentation{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  &__left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: toRem(33);
+  }
+  &__right{
+    display: grid;
+  }
+  &__h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: toRem(54);
+    line-height: toRem(81);
+    margin-bottom: toRem(34);
+    color: $white-color;
+    &--first{
+      color: $orange-bg;
+    }
+  }
+  &__desc{
+    font-family: 'Nunito', sans-serif;
+    color: $white-color;
+    font-weight: 400;
+    font-size: toRem(24);
+    margin-bottom: toRem(52);
+  }
+  &__basement{
+    display: flex;
+    align-items: center;
+    column-gap: toRem(40);
+  }
+  &__play{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex-grow: 1;
+    column-gap: toRem(32);
+  }
+  &__play-area{
+    width: toRem(80);
+    height: toRem(80);
+  }
+  &__namespace{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: toRem(24);
+    line-height: toRem(36);
+    color: $black-color;
+    white-space: nowrap;
+  }
+  &__card-messages{
+
+  }
+}
+
+.card-message{
+  display: inline-block;
+  backdrop-filter: blur(10px);
+  background-color: rgba($white-bg, .8);
+  border-radius: toRem(20);
+  padding: toRem(25) toRem(28);
+  &__frame{
+    display: flex;
+    column-gap: toRem(10);
+  }
+  &__images{
+    object-fit: contain;
+  }
+  &__desc{
+    display: flex;
+    flex-direction: column;
+  }
+  &__h4{
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: toRem(24);
+    color: $gray-color-light;
+  }
+  &__span{
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: toRem(20);
+    color: $gray-color-easy;
+  }
+}

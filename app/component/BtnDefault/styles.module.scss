@@ -26,13 +26,24 @@
 
   };
   &--middle{
-    min-width: toRem(160);
-    max-height: toRem(60);
     line-height: toRem(33);
     font-size: toRem(23);
-    padding: toRem(15) toRem(45)
+    padding: toRem(15) toRem(45);
+    max-height: toRem(60);
   };
   &--large{
+    line-height: toRem(36);
+    font-size: toRem(24);
+    padding: toRem(22) toRem(45);
+    max-height: toRem(80);
+  }
+}
 
+@media screen and (max-width: 768px){
+  .btn-default{
+    &--middle{
+      font-size: toRem(20);
+      padding: toRem(13) toRem(40)
+    };
   }
 }

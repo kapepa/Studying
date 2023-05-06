@@ -10,15 +10,8 @@ const BodyLayout = React.createContext<{bodyClick: (cb: () => void) => void }>(n
 
 const Default: FC<IDefault> = ({children, title}) => {
   const [date, setDate] = useState<number>(Date.now());
-  const reload = useCallback((cb) => {
-    console.log('cb BodyLayout')
-    cb()
-  }, [date]);
-
-  const bodyClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    console.log('bodyClick')
-    setDate(Date.now())
-  }
+  const reload = useCallback((cb) => cb(), [date]);
+  const bodyClick = (e: React.MouseEvent<HTMLDivElement>) => setDate(Date.now())
 
   return (
     <>
