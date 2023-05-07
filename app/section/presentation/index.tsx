@@ -2,10 +2,6 @@ import React, {FC} from "react";
 import style from "./style.module.scss";
 import BtnDefault from "../../component/BtnDefault";
 import BtnPlay from "../../component/BtnPlay";
-import GirlLarge from "../../public/image/girl-large.png";
-import GirlMiddle from "../../public/image/girl-middle.png";
-import GirlSmall from "../../public/image/girl-small.png";
-import Image from "next/image";
 
 const Presentation: FC = () => {
   const clickJoinBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
