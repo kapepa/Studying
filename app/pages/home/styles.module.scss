@@ -5,9 +5,11 @@
 .home{
   height: 100vh;
   max-height: 1120px;
-  margin: 0;
+  margin: 0 0 toRem(160) 0;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   &__sheet{
     height: 100%;
     width: 120%;
@@ -21,7 +23,7 @@
     right: -10%;
     left: -10%;
   }
-  &__main{
+  &__header{
     height: 100%;
     position: relative;
     left: -10px;
@@ -31,5 +33,16 @@
     position: absolute;
     right: 15%;
     bottom: 0;
+  }
+  &__main{
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(160);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home{
+    height: auto;
   }
 }

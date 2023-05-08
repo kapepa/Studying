@@ -13,17 +13,29 @@
   cursor: pointer;
   text-align: center;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  background-color: rgba($white-color, 1);
-  color: $gray-color;
   border-radius: 80px;
   border: none;
   transition: color .25s linear, background-color .25s linear;
-  &:hover {
-    color: $white-color;
-    background-color: rgba($white-color, .3);
+  &__bg--def{
+    color: $gray-color;
+    background-color: rgba($white-color, 1);
+    &:hover {
+      color: $white-color;
+      background-color: rgba($white-color, .3);
+    }
+  }
+  &__bg--red{
+    color: $white-bg;
+    background-color: rgba($red-color-default, 1);
+    &:hover {
+      color: $white-color;
+      background-color: rgba($red-color-default, .3);
+    }
   }
   &--small{
-
+    padding: toRem(12) toRem(45);
+    font-size: toRem(20);
+    line-height: toRem(27);
   };
   &--middle{
     line-height: toRem(33);

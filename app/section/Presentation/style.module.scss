@@ -6,11 +6,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100%;
+  grid-column-gap: toRem(45);
+  padding-left: toRem(33);
   &__left{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: toRem(33);
   }
   &__right{
     display: grid;
@@ -59,7 +60,9 @@
     white-space: nowrap;
   }
   &__card-messages{
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -69,6 +72,7 @@
   background-color: rgba($white-bg, .8);
   border-radius: toRem(20);
   padding: toRem(25) toRem(28);
+  align-self: baseline;
   &__frame{
     display: flex;
     column-gap: toRem(10);
@@ -82,16 +86,75 @@
   }
   &__h4{
     font-family: 'Nunito', sans-serif;
-    font-style: normal;
     font-weight: 700;
     font-size: toRem(24);
     color: $gray-color-light;
   }
   &__span{
     font-family: 'Nunito', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: toRem(20);
+    font-weight: 500;
+    font-size: toRem(18);
     color: $gray-color-easy;
+  }
+  &__btn-wrapper{
+    padding-top: toRem(20);
+  }
+  &:nth-child(1) {
+    margin-bottom: toRem(95);
+  }
+  &:nth-child(2) {
+    margin-bottom: toRem(30);
+    align-self: flex-end;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .presentation{
+    grid-column-gap: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(40);
+    &__left{
+      flex-grow: 1;
+    }
+    &__right{
+      flex-grow: 1;
+    }
+  }
+  .card-message{
+    &:nth-child(1) {
+      margin-bottom: toRem(45);
+    }
+    &:nth-child(2) {
+      margin-bottom: toRem(15);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .presentation{
+    &__basement{
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: toRem(34);
+    }
+    &__play{
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .presentation{
+    margin-top: toRem(20);
+    &__h1{
+      font-size: toRem(45);
+      line-height: toRem(60);
+      margin-bottom: toRem(25);
+    }
+    &__desc{
+      font-size: toRem(20);
+      margin-bottom: toRem(40);
+    }
   }
 }

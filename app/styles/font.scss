@@ -33,3 +33,30 @@
 	font-weight: 700;
 	font-style: normal;
 }
+
+@font-face {
+	font-family: 'Buenos';
+	src: url('../fonts/BuenosAires-Light/Buenos Aires-Light.eot');
+	src: url('../fonts/BuenosAires-Light/Buenos Aires-Light.woff') format('woff'),
+	url('../fonts/BuenosAires-Light/Buenos Aires-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Buenos';
+	src: url('../fonts/BuenosAires-Regular/Buenos Aires-Regular.eot');
+	src: url('../fonts/BuenosAires-Regular/Buenos Aires-Regular.woff') format('woff'),
+	url('../fonts/BuenosAires-Regular/Buenos Aires-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Buenos';
+	src: url('../fonts/BuenosAires-Bold/Buenos Aires-Bold.eot');
+	src: url('../fonts/BuenosAires-Bold/Buenos Aires-Bold.woff') format('woff'),
+	url('../fonts/BuenosAires-Bold/Buenos Aires-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
