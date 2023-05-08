@@ -12,6 +12,10 @@ const Presentation: FC = () => {
     console.log(b)
   }
 
+  const clickJoin = (e: React.MouseEvent<HTMLButtonElement>) => {
+
+  }
+
   return <section className={style.presentation}>
     <div className={style.presentation__left}>
       <h1 className={style.presentation__h1}>
@@ -31,7 +35,8 @@ const Presentation: FC = () => {
       </div>
     </div>
     <div className={style.presentation__right}>
-      <div className={`${style['presentation__card-message']}`}>
+      <div className={`${style['presentation__card-messages']}`}>
+
         <div className={`${style['card-message']}`}>
           <div className={style['card-message__frame']}>
             <img width={50} height={50} src='/svg/calendar.svg' alt='img' className={style['card-message__images']}/>
@@ -41,6 +46,30 @@ const Presentation: FC = () => {
             </div>
           </div>
         </div>
+
+        <div className={`${style['card-message']}`}>
+          <div className={style['card-message__frame']}>
+            <img width={50} height={50} src='/svg/email.svg' alt='img' className={style['card-message__images']}/>
+            <div className={style['card-message__desc']}>
+              <h4 className={style['card-message__h4']}>Congratulations</h4>
+              <span className={style['card-message__span']}>Your admission completed</span>
+            </div>
+          </div>
+        </div>
+
+        <div className={`${style['card-message']}`}>
+          <div className={style['card-message__frame']}>
+            <img width={50} height={50} src='/image/face.png' alt='img' className={style['card-message__images']}/>
+            <div className={style['card-message__desc']}>
+              <h4 className={style['card-message__h4']}>User Experience Class</h4>
+              <span className={style['card-message__span']}>Today at 12.00 PM</span>
+              <div className={style['card-message__btn-wrapper']}>
+                <BtnDefault click={clickJoin} text='Join Now' bg='red' size='small'/>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>

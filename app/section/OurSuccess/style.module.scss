@@ -1,0 +1,77 @@
+@import './../../styles/font.scss';
+@import './../../styles/variable.scss';
+@import './../../styles/mixing.scss';
+
+.our-success{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: toRem(16);
+    max-width: toRem(750);
+    align-items: center;
+    margin-bottom: toRem(100);
+  }
+  &__h2{
+    font-family: 'Buenos', sans-serif;
+    font-weight: 700;
+    font-size: toRem(48);
+    color: $black-color-best;
+  }
+  &__span{
+    font-family: 'Buenos', sans-serif;
+    font-weight: 400;
+    font-size: toRem(18);
+    color: $black-color-best;
+    opacity: 0.8;
+    text-align: center;
+  }
+  &__counters{
+    display: flex;
+    justify-content: center;
+    column-gap: toRem(95);
+    row-gap: toRem(20);
+  }
+  &__cell{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 25%;
+  }
+  &__digit{
+    font-family: 'Buenos', sans-serif;
+    font-weight: 300;
+    font-size: toRem(96);
+    line-height: 100%;
+    background: linear-gradient(90deg, #136CB5 0%, #49BBBD 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &__desc{
+    font-family: 'Buenos', sans-serif;
+    font-weight: 400;
+    font-size: toRem(32);
+    line-height: 130%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .our-success{
+    &__counters{
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .our-success{
+    &__cell{
+      flex-basis: 100%;
+    }
+  }
+}
