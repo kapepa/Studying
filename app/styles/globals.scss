@@ -45,6 +45,37 @@ ul, li{
   height: 100%;
 }
 
+.cap{
+  &__header{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: toRem(36);
+    line-height: toRem(65);
+    text-align: center;
+    color: $green-color-light;
+    padding-bottom: toRem(20);
+    &--highlight{
+      color: $blue-color-dark;
+    }
+    &--left{
+      text-align: left;
+    }
+  }
+  &__detailed{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(24);
+    line-height: toRem(43);
+    text-align: center;
+    color: $gray-color-simple;
+    max-width: toRem(850);
+    display: inline-block;
+    &--left{
+      text-align: left;
+    }
+  }
+}
+
 @media only screen and (max-width : 1440px) {
   html{
     font-size: 14px;

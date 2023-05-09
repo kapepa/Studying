@@ -4,6 +4,8 @@ import PanelNav from "../../component/PanelNav/index";
 import styles from "./styles.module.scss";
 import Presentation from "../../section/Presentation";
 import OurSuccess from "../../section/OurSuccess/index.";
+import Software from "../../section/Software";
+import Platform from "../../section/Platform";
 
 const Home: FC = () => {
   return (
@@ -25,7 +27,13 @@ const Home: FC = () => {
       </div>
       <main className={styles.home__main}>
         <div className="container">
-          <OurSuccess />
+          <OurSuccess/>
+        </div>
+        <div className="container">
+          <Software/>
+        </div>
+        <div className="container">
+          <Platform/>
         </div>
       </main>
     </Default>
