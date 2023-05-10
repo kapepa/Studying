@@ -32,6 +32,23 @@
       background-color: rgba($red-color-default, .3);
     }
   }
+  &__bg--blue{
+    color: $white-bg;
+    background-color: rgba($blue-bg-smoke, 1);
+    &:hover {
+      color: $white-color;
+      background-color: rgba($blue-bg-smoke, .3);
+    }
+  }
+  &__bg--green{
+    color: $green-color-easy;
+    border: 1px solid $green-bg-easy;
+    &:hover {
+      color: $white-color;
+      border: 1px solid rgba($green-bg-easy, .3);
+      background-color: rgba($green-bg-easy, .3);
+    }
+  }
   &__bg--transparent{
     color: $white-bg;
     border: 1px solid $white-bg;

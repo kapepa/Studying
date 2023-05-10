@@ -6,6 +6,7 @@ import Presentation from "../../section/Presentation";
 import OurSuccess from "../../section/OurSuccess/index.";
 import Software from "../../section/Software";
 import Platform from "../../section/Platform";
+import Features from "../../section/Features/index.";
 
 const Home: FC = () => {
   return (
@@ -34,6 +35,9 @@ const Home: FC = () => {
         </div>
         <div className="container">
           <Platform/>
+        </div>
+        <div className="container">
+          <Features/>
         </div>
       </main>
     </Default>
