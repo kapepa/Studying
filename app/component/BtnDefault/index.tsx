@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 
 enum BtnType {"submit", "reset", "button"}
 enum BtnSize {"small", "middle", "large"}
-enum BgColor {"default", "red", "transparent"}
+enum BgColor {"default", "red" , "blue", "green", "transparent"}
 
 interface IBtnDefault {
   text: string,
@@ -18,6 +18,8 @@ const BtnDefault: FC<IBtnDefault> = ({text, type = "button", size = "middle", bg
   const btnBg = classNames({
     "btn-default__bg--def": !bg || bg === "default",
     "btn-default__bg--red": bg === "red",
+    "btn-default__bg--blue": bg === "blue",
+    "btn-default__bg--green": bg === "green",
     "btn-default__bg--transparent": bg === "transparent",
   });
   const btnSize = classNames({

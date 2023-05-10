@@ -49,12 +49,12 @@ const Platform: FC = () => {
     <div className={style.platform__basement}>
       <div className={style.platform__management}>
         <h3 className={'cap__header cap__header--left'}><span className={'cap__header--highlight'}> Everything you can do in a physical classroom,</span> you can do with TOTC</h3>
-        {/*<span className={'cap__detailed cap__detailed--left'}>TOTC’s school management software helps traditional and online schools manage scheduling, attendance, payments and virtual classrooms all in one secure cloud-based system.</span>*/}
-        {/*<a href='#' className={style.platform__link}>Learn more</a>*/}
+        <span className={'cap__detailed cap__detailed--left'}>TOTC’s school management software helps traditional and online schools manage scheduling, attendance, payments and virtual classrooms all in one secure cloud-based system.</span>
+        <a href='#' className={style.platform__link}>Learn more</a>
       </div>
-      <div className={style.platform__play}>qqqqqqqqq
-        {/*<img src={'/image/classroom.png'} className={style.platform__video} alt='video'/>*/}
-        {/*<BtnPlay size={70} cb={clickVideo} sizeTriangle={'large'}/>*/}
+      <div className={style.platform__play}>
+        <img src={'/image/classroom.png'} className={style.platform__video} alt='video'/>
+        <BtnPlay size={70} cb={clickVideo} sizeTriangle={'large'}/>
       </div>
     </div>
   </section>
