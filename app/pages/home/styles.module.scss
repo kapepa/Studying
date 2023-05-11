@@ -39,6 +39,20 @@
     flex-direction: column;
     row-gap: toRem(160);
   }
+  &__explore-bg{
+    position: relative;
+    &::after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 80%;
+      background-color: $gray-bg-awesome;
+      border-bottom-right-radius: toRem(50);
+      z-index: -1;
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {

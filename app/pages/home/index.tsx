@@ -7,6 +7,7 @@ import OurSuccess from "../../section/OurSuccess/index.";
 import Software from "../../section/Software";
 import Platform from "../../section/Platform";
 import Features from "../../section/Features/index.";
+import Explore from "../../section/Explore/index.";
 
 const Home: FC = () => {
   return (
@@ -14,9 +15,9 @@ const Home: FC = () => {
       <div className={styles.home}>
         <div className={styles.home__sheet}>
           <picture>
-            <source srcSet="/image/girl-small.png" media="(max-width: 768px)" />
-            <source srcSet="/image/girl-middle.png" media="(max-width: 1024px)" />
-            <img className={styles['home__img-bg']} src="/image/girl-large.png" alt='girl'/>
+            <source srcSet={"/image/girl-small.png"} media="(max-width: 768px)" />
+            <source srcSet={"/image/girl-middle.png"} media="(max-width: 1024px)" />
+            <img className={styles['home__img-bg']} src={"/image/girl-large.png"} alt='girl'/>
           </picture>
         </div>
         <PanelNav/>
@@ -38,6 +39,11 @@ const Home: FC = () => {
         </div>
         <div className="container">
           <Features/>
+        </div>
+        <div className={styles['home__explore-bg']}>
+          <div className="container">
+            <Explore/>
+          </div>
         </div>
       </main>
     </Default>
