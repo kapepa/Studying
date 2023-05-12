@@ -8,6 +8,8 @@ import Software from "../../section/Software";
 import Platform from "../../section/Platform";
 import Features from "../../section/Features/index.";
 import Explore from "../../section/Explore/index.";
+import Review from "../../section/Review";
+import News from "../../section/News/index.";
 
 const Home: FC = () => {
   return (
@@ -44,6 +46,12 @@ const Home: FC = () => {
           <div className="container">
             <Explore/>
           </div>
+        </div>
+        <div className="container">
+          <Review />
+        </div>
+        <div className="container">
+          <News />
         </div>
       </main>
     </Default>

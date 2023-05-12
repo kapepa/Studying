@@ -16,6 +16,7 @@
   border-radius: 80px;
   border: none;
   transition: color .25s linear, background-color .25s linear, border .25s linear;
+  text-decoration: none;
   &__bg--def{
     color: $gray-color;
     background-color: rgba($white-color, 1);
