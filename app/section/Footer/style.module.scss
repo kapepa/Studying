@@ -1,0 +1,127 @@
+@import "./../../styles/variable.scss";
+@import "./../../styles/font.scss";
+@import "./../../styles/mixing.scss";
+
+.footer{
+  padding-top: toRem(74);
+  padding-bottom: toRem(40);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  &__link{
+    margin-bottom: toRem(100);
+    max-width: toRem(388);
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    align-self: center;
+    &::before{
+      content: '';
+      position: absolute;
+      background-color: $gray-bg-light;
+      top: 0;
+      left: 50%;
+      bottom: 0;
+      width: 1px;
+      transform: translateX(-50%);
+    }
+  }
+  &__logo{
+    max-width: toRem(124);
+    width: 100%;
+  }
+  &__h{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: toRem(22);
+    line-height: toRem(33);
+    color: $white-color;
+    max-width: toRem(156);
+  }
+  &__subscribe{
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(20);
+    align-items: center;
+    padding-bottom: toRem(96);
+  }
+  &__subtitle{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: toRem(26);
+    line-height: toRem(39);
+    text-align: center;
+    color: $gray-color-warm;
+  }
+  &__form{
+    display: flex;
+    max-width: toRem(600);
+    width: 100%;
+    column-gap: toRem(20);
+    max-height: toRem(60);
+  }
+  &__input{
+    flex-grow: 1;
+    border-radius: toRem(80);
+    border: 1px solid $gray-bg-pretty;
+    background-color: transparent;
+    color: $gray-color-pretty;
+    padding: toRem(15) toRem(30);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(20);
+    line-height: toRem(30);
+    text-align: center;
+  }
+  &__nav{
+    display: flex;
+    align-self: center;
+    padding-bottom: toRem(20);
+  }
+  &__nav-link{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(22);
+    line-height: toRem(33);
+    text-align: center;
+    color: $gray-color-warm;
+    padding: 0 toRem(20);
+    position: relative;
+    text-decoration: none;
+    &:not(:last-child){
+      &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 1px;
+        background-color: $gray-bg-light;
+      }
+    }
+  }
+  &__protected{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(22);
+    line-height: toRem(33);
+    color: $gray-color-warm;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 425px){
+  .footer{
+    &__subscribe{
+      padding-bottom: toRem(150);
+    }
+    &__form{
+      max-width: toRem(400);
+      flex-direction: column;
+      row-gap: toRem(30);
+    }
+  }
+}

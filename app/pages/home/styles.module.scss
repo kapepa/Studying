@@ -53,6 +53,9 @@
       z-index: -1;
     }
   }
+  &__footer{
+    background-color: $black-bg-def;
+  }
 }
 
 @media screen and (max-width: 768px) {

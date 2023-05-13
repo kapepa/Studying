@@ -7,8 +7,6 @@
   font-weight: 400;
   font-size: toRem(50);
   display: inline-block;
-  width: auto;
-  height: 100%;
   white-space: nowrap;
   cursor: pointer;
   text-align: center;
@@ -59,9 +57,16 @@
       background-color: rgba($deepskyblue-color-def, .8);
     }
   }
+  &__bg--light-green{
+    color: $white-bg;
+    background-color: $green-bg-easy;
+    &:hover{
+      background-color: rgba($green-bg-easy, .8);
+    }
+  }
   &--small{
-    padding: toRem(12) toRem(45);
     font-size: toRem(20);
+    padding: toRem(12) toRem(35);
     line-height: toRem(27);
   };
   &--middle{
