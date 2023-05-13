@@ -6,10 +6,11 @@ import Presentation from "../../section/Presentation";
 import OurSuccess from "../../section/OurSuccess/index.";
 import Software from "../../section/Software";
 import Platform from "../../section/Platform";
-import Features from "../../section/Features/index.";
+import Features from "../../section/Features";
 import Explore from "../../section/Explore/index.";
 import Review from "../../section/Review";
 import News from "../../section/News/index.";
+import Footer from "../../section/Footer";
 
 const Home: FC = () => {
   return (
@@ -52,6 +53,11 @@ const Home: FC = () => {
         </div>
         <div className="container">
           <News />
+        </div>
+        <div className={styles['home__footer']}>
+          <div className="container">
+            <Footer />
+          </div>
         </div>
       </main>
     </Default>
