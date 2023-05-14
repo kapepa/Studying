@@ -26,7 +26,7 @@ const Features: FC = () => {
           <img className={style['f-conversation__border']} src={'/image/border.png'} alt='border'/>
           <div className={style['f-conversation__communication']}>
             <div className={style['f-conversation__leading']}>
-              <img className={style['f-conversation__speaker']} src={'/image/community_people_one.png'} />
+              <img className={style['f-conversation__speaker']} src={'/image/community_people_one.png'} alt={'people'}/>
               <div className={style['f-conversation__action-area']}>
                 <BtnDefault bg={'blue'} text={'Present'} size={'small'} click={clickPresent}/>
                 <BtnDefault bg={'red'} text={'Call'} size={'small'} click={clickCall}/>
