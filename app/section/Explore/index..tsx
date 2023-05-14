@@ -1,5 +1,6 @@
 import {FC} from "react";
 import style from "./style.module.scss";
+import Link from "next/link";
 
 const Explore: FC = () => {
   return <section className={style.explore}>
@@ -15,7 +16,7 @@ const Explore: FC = () => {
             <img src={'/svg/paint.svg'} className={style['e-course__ico']} alt={'pain'} />
             <span className={style['e-course__span']}>Lorem Ipsum</span>
           </div>
-          <a href="#" className={style['e-course__link']}>See all<div className={style['e-course__arrow']} /></a>
+          <Link href="#" className={style['e-course__link']}>See all<div className={style['e-course__arrow']} /></Link>
         </div>
 
         <div className={style['e-course__content']}>
@@ -66,7 +67,7 @@ const Explore: FC = () => {
             <img src={'/svg/paint.svg'} className={style['e-course__ico']} alt={'pain'} />
             <span className={style['e-course__span']}>Lorem Ipsum</span>
           </div>
-          <a href="#" className={style['e-course__link']}>See all<div className={style['e-course__arrow']} /></a>
+          <Link href="#" className={style['e-course__link']}>See all<div className={style['e-course__arrow']} /></Link>
         </div>
     
         <div className={style['e-course__content']}>
@@ -117,7 +118,7 @@ const Explore: FC = () => {
             <img src={'/svg/paint.svg'} className={style['e-course__ico']} alt={'pain'} />
             <span className={style['e-course__span']}>Lorem Ipsum</span>
           </div>
-          <a href="#" className={style['e-course__link']}>See all<div className={style['e-course__arrow']} /></a>
+          <Link href="#" className={style['e-course__link']}>See all<div className={style['e-course__arrow']} /></Link>
         </div>
     
         <div className={style['e-course__content']}>
