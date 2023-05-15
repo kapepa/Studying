@@ -5,6 +5,7 @@ import BtnDefault from "../../component/BtnDefault";
 const Reading: FC = () => {
   const clickTechnology = (technology: string) => {
     console.log(technology);
+
   }
 
   return <section className={style.reading}>
