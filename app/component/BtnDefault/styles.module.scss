@@ -11,10 +11,18 @@
   cursor: pointer;
   text-align: center;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  border-radius: 80px;
+
   border: none;
   transition: color .25s linear, background-color .25s linear, border .25s linear;
   text-decoration: none;
+  &__shape{
+    &--circle{
+      border-radius: toRem(80);
+    }
+    &--rounding{
+      border-radius: toRem(20);
+    }
+  }
   &__bg--def{
     color: $gray-color;
     background-color: rgba($white-color, 1);
@@ -54,14 +62,14 @@
     background-color: transparent;
     &:hover{
       border: 1px solid $deepskyblue-color-def;
-      background-color: rgba($deepskyblue-color-def, .8);
+      background-color: rgba($deepskyblue-color-def, .3);
     }
   }
   &__bg--light-green{
     color: $white-bg;
     background-color: $green-bg-easy;
     &:hover{
-      background-color: rgba($green-bg-easy, .8);
+      background-color: rgba($green-bg-easy, .3);
     }
   }
   &--small{

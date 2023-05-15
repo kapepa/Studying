@@ -1,0 +1,66 @@
+@import "../../styles/font.scss";
+@import "../../styles/variable.scss";
+@import "../../styles/mixing.scss";
+
+.learning{
+  padding: toRem(70) 0;
+  display: flex;
+  justify-content: space-between;
+  column-gap: toRem(30);
+  row-gap: toRem(60);
+  flex-wrap: wrap;
+  &__content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: toRem(690);
+    flex: 1 1 toRem(550);
+  }
+  &__additional{
+    flex: 1 1 toRem(550);
+    display: flex;
+    max-width: toRem(780);
+  }
+  &__pre-title{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(24);
+    line-height: toRem(43);
+    color: $black-color-def;
+    padding-bottom: toRem(24);
+    &--highlight{
+      color: $green-color-easy;
+    }
+  }
+  &__h{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: toRem(44);
+    line-height: toRem(66);
+    color: $blue-color-dark;
+    padding-bottom: toRem(14);
+  }
+  &__span{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(24);
+    line-height: toRem(43);
+    color: $gray-color-simple;
+    padding-bottom: toRem(24);
+  }
+  &__images{
+    border-radius: toRem(20);
+    width: 100%;
+    max-width: toRem(780);
+    height: 100%;
+    max-height: toRem(526);
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .learning{
+    justify-content: center;
+  }
+
+}

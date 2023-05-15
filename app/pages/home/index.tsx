@@ -23,7 +23,7 @@ const Home: FC = () => {
             <img className={styles['home__img-bg']} src={"/image/girl-large.png"} alt='girl'/>
           </picture>
         </div>
-        <PanelNav/>
+        <PanelNav theme={'light'}/>
         <div className="container">
           <header className={styles.home__header}>
             <Presentation/>
