@@ -5,6 +5,7 @@ import Link from "next/link";
 
 enum BtnType {"submit", "reset", "button"}
 enum BtnSize {"small", "middle", "large"}
+enum ShapeType {"circle", "rounding"}
 enum BgColor {"default", "red" , "blue", "green", "light-green", "transparent"}
 
 interface IBtnDefault {
@@ -14,10 +15,11 @@ interface IBtnDefault {
   bg?: keyof typeof BgColor,
   size?: keyof typeof BtnSize,
   type?: keyof typeof BtnType,
+  shape?: keyof typeof ShapeType,
   click?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void,
 }
 
-const BtnDefault: FC<IBtnDefault> = ({text, type = "button", size = "middle", bg = "default", click, href, disabled= false}) => {
+const BtnDefault: FC<IBtnDefault> = ({text, type = "button", size = "middle", bg = "default", click, href, disabled= false, shape = "circle"}) => {
   const btnBg = classNames({
     "btn-default__bg--def": !bg || bg === "default",
     "btn-default__bg--red": bg === "red",
@@ -31,10 +33,14 @@ const BtnDefault: FC<IBtnDefault> = ({text, type = "button", size = "middle", bg
     "btn-default--middle": size === "middle",
     "btn-default--large": size === "large",
   });
+  const shapeType = classNames({
+    "btn-default__shape--circle": shape === "circle",
+    "btn-default__shape--rounding": shape === "rounding",
+  })
 
   const button = () => <button
     onClick={click}
-    className={`${styles["btn-default"]} ${styles[btnSize]} ${styles[btnBg]}`}
+    className={`${styles["btn-default"]} ${styles[shapeType]} ${styles[btnSize]} ${styles[btnBg]}`}
     type={type}
     disabled={disabled}
   >{text}</button>
@@ -42,7 +48,7 @@ const BtnDefault: FC<IBtnDefault> = ({text, type = "button", size = "middle", bg
   const link = () => <Link
     href={href}
     onClick={click}
-    className={`${styles["btn-default"]} ${styles[btnSize]} ${styles[btnBg]}`}
+    className={`${styles["btn-default"]} ${styles[shapeType]} ${styles[btnSize]} ${styles[btnBg]}`}
   >{text}</Link>
 
   return (!!href ? link : button)();

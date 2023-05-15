@@ -1,0 +1,19 @@
+@import './../../styles/font.scss';
+@import './../../styles/variable.scss';
+@import './../../styles/mixing.scss';
+
+.related{
+  padding: toRem(93) 0 toRem(63) 0;
+  &__cards{
+
+  }
+  &__card{
+    padding: toRem(60) toRem(33);
+    background-color: $white-bg;
+    border-radius: toRem(20);
+    max-width: toRem(786);
+  }
+  &__avatar{
+
+  }
+}

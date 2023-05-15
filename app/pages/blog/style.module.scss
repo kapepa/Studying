@@ -1,0 +1,13 @@
+@import "./../../styles/variable.scss";
+@import "./../../styles/font.scss";
+@import "./../../styles/mixing.scss";
+
+.blog{
+  background-color: $white-bg;
+  &__learning{
+    background-color: $lightslategrey-bg-def;
+  }
+  &__related{
+    background-color: $lightslategrey-bg-def;
+  }
+}

@@ -76,6 +76,14 @@ ul, li{
   }
 }
 
+.h-bold{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: toRem(30);
+  line-height: toRem(45);
+  color: rgba($black-color-def, 0.8);
+}
+
 @media only screen and (max-width : 1440px) {
   html{
     font-size: 14px;

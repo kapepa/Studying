@@ -1,0 +1,50 @@
+@import "./../../styles/variable.scss";
+@import "./../../styles/font.scss";
+@import "./../../styles/mixing.scss";
+
+.reading{
+  padding: toRem(80) 0;
+  &__list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: toRem(70);
+    row-gap: toRem(70);
+    padding-top: toRem(26);
+  }
+  &__technology{
+    border-radius: toRem(20);
+    position: relative;
+    max-width: toRem(356);
+    min-width: toRem(280);
+    overflow: hidden;
+    flex: 1 1 toRem(240);
+  }
+  &__images{
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    position: relative;
+    &::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba($black-bg-begin, .25);
+    }
+  }
+  &__action{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: toRem(63);
+    width: 69%;
+    bottom: toRem(34);
+    padding-bottom: toRem(34);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
