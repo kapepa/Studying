@@ -5,15 +5,88 @@
 .related{
   padding: toRem(93) 0 toRem(63) 0;
   &__cards{
-
+    //display: flex;
+    //justify-content: center;
+    //flex-wrap: wrap;
+    //column-gap: toRem(99);
+    //row-gap: toRem(99);
+    //position: relative;
+    padding-top: toRem(41);
+    padding-bottom: toRem(73);
   }
   &__card{
     padding: toRem(60) toRem(33);
     background-color: $white-bg;
     border-radius: toRem(20);
     max-width: toRem(786);
+    flex: 1 1 toRem(570);
+  }
+  &__photo{
+    max-height: toRem(382);
+    max-width: 100%;
+    padding-bottom: toRem(12);
+  }
+  &__h{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: toRem(26);
+    line-height: toRem(47);
+    color: $black-color;
+    padding-bottom: toRem(14);
+  }
+  &__profile{
+    padding-left: toRem(23);
+    display: flex;
+    align-items: center;
+    column-gap: toRem(16);
+    padding-bottom: toRem(23);
   }
   &__avatar{
-
+    border-radius: 50%;
+    width: toRem(70);
+    height: toRem(70);
+  }
+  &__namespace{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: toRem(18);
+    line-height: toRem(27);
+    color: $black-color-def;
+  }
+  &__text{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(20);
+    line-height: toRem(36);
+    color: $gray-color-simple;
+    padding-bottom: toRem(45);
+    display: inline-block;
+  }
+  &__basement{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__link{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(20);
+    line-height: toRem(36);
+    text-decoration-line: underline;
+    color: $gray-color-simple;
+  }
+  &__count{
+    display: flex;
+    column-gap: toRem(22);
+  }
+  &__eye{
+    width: toRem(25);
+    height: toRem(25);
+  }
+  &__number{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(20);
+    color: $gray-color-simple;
   }
 }
