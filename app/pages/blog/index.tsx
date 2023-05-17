@@ -6,6 +6,8 @@ import PanelNav from "../../component/PanelNav";
 import Learning from "../../section/Learning";
 import Reading from "../../section/Reading";
 import Related from "../../section/Related";
+import Marketing from "../../section/Marketing";
+import Footer from "../../section/Footer";
 
 interface InterfaceBlog {
 
@@ -27,6 +29,14 @@ const Blog: NextPage<InterfaceBlog> = () => {
       <div className={`${style.blog__related}`}>
         <div className='container'>
           <Related/>
+        </div>
+      </div>
+      <div className='container'>
+        <Marketing/>
+      </div>
+      <div className={style['blog__footer']}>
+        <div className="container">
+          <Footer/>
         </div>
       </div>
     </main>
