@@ -3,14 +3,8 @@
 @import './../../styles/mixing.scss';
 
 .related{
-  padding: toRem(93) 0 toRem(63) 0;
+  padding: toRem(93) 0 toRem(100) 0;
   &__cards{
-    //display: flex;
-    //justify-content: center;
-    //flex-wrap: wrap;
-    //column-gap: toRem(99);
-    //row-gap: toRem(99);
-    //position: relative;
     padding-top: toRem(41);
     padding-bottom: toRem(73);
   }
@@ -19,7 +13,6 @@
     background-color: $white-bg;
     border-radius: toRem(20);
     max-width: toRem(786);
-    flex: 1 1 toRem(570);
   }
   &__photo{
     max-height: toRem(382);
@@ -88,5 +81,15 @@
     font-weight: 400;
     font-size: toRem(20);
     color: $gray-color-simple;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .related{
+    &__cards{
+      max-width: toRem(780);
+      padding: toRem(20);
+      margin: 0 auto;
+    }
   }
 }
