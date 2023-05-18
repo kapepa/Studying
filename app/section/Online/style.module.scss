@@ -1,0 +1,44 @@
+@import "./../../styles/variable.scss";
+@import "./../../styles/font.scss";
+@import "./../../styles/mixing.scss";
+
+.online{
+  background-color: $black-bg-def;
+  border-radius: toRem(37);
+  padding: toRem(70) toRem(30) toRem(80) toRem(30);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__h{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: toRem(36);
+    text-align: center;
+    color: $white-color;
+    padding-bottom: toRem(30);
+  }
+  &__span{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(24);
+    line-height: toRem(43);
+    text-align: center;
+    color: $white-color;
+    padding-bottom: toRem(70);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .online{
+    padding: toRem(50) toRem(30) toRem(40) toRem(30);
+    &__h{
+      font-size: toRem(25);
+      line-height: toRem(40);
+    }
+    &__span{
+      font-size: toRem(18);
+      line-height: toRem(30);
+      padding-bottom: toRem(30);
+    }
+  }
+}

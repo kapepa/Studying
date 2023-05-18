@@ -23,6 +23,16 @@
       border-radius: toRem(20);
     }
   }
+  &__bg--transparent-green{
+    color: $green-color-easy;
+    background-color: transparent;
+    border: 1px solid $gray-bg-expensive;
+    &:hover{
+      color: $white-bg;
+      border: 1px solid $green-bg-easy;
+      background-color: $green-bg-easy;
+    }
+  }
   &__bg--def{
     color: $gray-color;
     background-color: rgba($white-color, 1);
