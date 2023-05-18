@@ -6,7 +6,7 @@ import Link from "next/link";
 enum BtnType {"submit", "reset", "button"}
 enum BtnSize {"small", "middle", "large"}
 enum ShapeType {"circle", "rounding"}
-enum BgColor {"default", "red" , "blue", "green", "light-green", "transparent"}
+enum BgColor {"default", "red" , "blue", "green", "light-green", "transparent", "transparent-green"}
 
 interface IBtnDefault {
   disabled?: boolean,
@@ -27,6 +27,7 @@ const BtnDefault: FC<IBtnDefault> = ({text, type = "button", size = "middle", bg
     "btn-default__bg--green": bg === "green",
     "btn-default__bg--light-green": bg === "light-green",
     "btn-default__bg--transparent": bg === "transparent",
+    "btn-default__bg--transparent-green": bg === "transparent-green",
   });
   const btnSize = classNames({
     "btn-default--small": size === "small",
