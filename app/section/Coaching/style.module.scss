@@ -1,0 +1,39 @@
+@import "./../../styles/variable.scss";
+@import "./../../styles/font.scss";
+@import "./../../styles/mixing.scss";
+
+.coaching{
+  padding: toRem(80) 0;
+  &__h{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: toRem(36);
+    line-height: toRem(54);
+    color: $black-color-pretty;
+    padding-bottom: toRem(80);
+    text-align: center;
+  }
+  &__accordion{
+    display: flex;
+    flex-direction: column;
+  }
+  &__cell{
+    border-bottom: 1px solid $gray-bg-simple;
+  }
+  &__cap{
+    padding: toRem(15);
+  }
+  &__subject{
+    padding-left: toRem(36);
+  }
+  &__arrow{
+
+  }
+  &__stretch{
+
+  }
+  &__more{
+    padding: 0 toRem(36);
+    display: inline-block;
+  }
+}

@@ -1,0 +1,117 @@
+@import "./../../styles/variable.scss";
+@import "./../../styles/font.scss";
+@import "./../../styles/mixing.scss";
+
+.pricing{
+  padding-top: toRem(90);
+  padding-bottom: toRem(195);
+  &__h{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: toRem(64);
+    line-height: toRem(96);
+    text-align: center;
+    color: $green-color-easy;
+    padding-bottom: toRem(77);
+  }
+  &__dashboard{
+    display: flex;
+    justify-content: center;
+    column-gap: toRem(30);
+    row-gap: toRem(30);
+    flex-wrap: wrap;
+  }
+  &__card{
+    max-width: toRem(370);
+    padding: toRem(32);
+    display: flex;
+    flex-direction: column;
+    border-radius: toRem(16);
+    flex: 1 1 toRem(330);
+    &--shadow{
+     box-shadow: 0 8px 8px rgba(38, 50, 56, 0.1);
+    }
+  }
+  &__cap{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: toRem(16);
+  }
+  &__subtitle{
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: toRem(18);
+    line-height: toRem(32);
+    color: $green-color-easy;
+  }
+  &__clue{
+    border: 1px solid $purple-color-def;
+    border-radius: toRem(100);
+    padding: toRem(8) toRem(20);
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: toRem(12);
+    line-height: toRem(15);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: $black-color-pretty;
+  }
+  &__worth{
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: toRem(48);
+    line-height: toRem(56);
+    color: $black-color-pretty;
+    padding-bottom: toRem(28);
+    &--small{
+      font-size: toRem(12);
+    }
+  }
+  &__possibilities{
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(16);
+    padding-bottom: toRem(16);
+    flex-grow: 1;
+  }
+  &__capability{
+    position: relative;
+    padding-left: toRem(48);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: toRem(18);
+    line-height: toRem(32);
+    color: $black-color-pretty;
+    &::before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: toRem(32);
+      height: toRem(32);
+      transform: translateY(-50%);
+      background-color: $yellow-bg-light;
+      border-radius: 50%;
+      background-image: url("../../public/svg/check.svg");
+      background-repeat: no-repeat;
+      background-position: 50%;
+    }
+    &--gray{
+      &::before{
+        background-color: $gray-bg-pretty;
+      }
+    }
+    &--green{
+      &::before{
+        background-color: $green-bg-legend;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px){
+  .pricing {
+    padding-top: toRem(50);
+    padding-bottom: toRem(80);
+  }
+}
