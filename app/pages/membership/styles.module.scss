@@ -1,3 +1,9 @@
-.membership{
+@import "./../../styles/variable.scss";
+@import "./../../styles/font.scss";
+@import "./../../styles/mixing.scss";
 
+.membership{
+  &__bg-gray{
+    background-color: $lightslategrey-bg-def;
+  }
 }

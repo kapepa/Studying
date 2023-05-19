@@ -8,6 +8,9 @@
     padding-top: toRem(41);
     padding-bottom: toRem(73);
   }
+  &__frame{
+    padding: 0 toRem(20);
+  }
   &__card{
     padding: toRem(60) toRem(33);
     background-color: $white-bg;
@@ -15,7 +18,6 @@
     max-width: toRem(786);
   }
   &__photo{
-    max-height: toRem(382);
     max-width: 100%;
     padding-bottom: toRem(12);
   }
@@ -80,7 +82,53 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: toRem(20);
-    color: $gray-color-simple;
+    //color: $gray-color-simple;
+  }
+  &__slider{
+    position: relative;
+    &> div:nth-child(2){
+      margin: 0 toRem(-20);
+    }
+  }
+  &__slick-prev, &__slick-next{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    transform: translate(0 , 0);
+    background-color: $green-bg-easy;
+    width: toRem(50);
+    height: toRem(50);
+    font-family: sans-serif;
+    cursor: pointer;
+    border-radius: toRem(4);
+    &:hover{
+      background-color: rgba($green-bg-easy, .5);
+    }
+    &:focus{
+      background-color: rgba($green-bg-easy, .5);
+    }
+    &::before{
+      content: "";
+      border: solid $white-color;
+      border-width: 0 toRem(3) toRem(3) 0;
+      display: inline-block;
+      padding: toRem(5);
+      position: absolute;
+      top: 50%;
+      right: 50%;
+    }
+  }
+  &__slick-prev{
+    transform: translate(-150%, 100%);
+    &::before{
+      transform: translate(50%, -50%) rotate(135deg);
+    }
+  }
+  &__slick-next{
+    transform: translateY(100%);
+    &::before{
+      transform: translate(50%, -50%) rotate(-45deg);
+    }
   }
 }
 
@@ -90,6 +138,24 @@
       max-width: toRem(780);
       padding: toRem(20);
       margin: 0 auto;
+    }
+  }
+}
+
+
+@media screen and (max-width: 425px){
+  .related{
+    &__card{
+      padding: toRem(30) toRem(23);
+    }
+    &__h{
+      font-size: toRem(23);
+      line-height: toRem(27);
+    }
+    &__text{
+      font-size: toRem(18);
+      line-height: toRem(28);
+      padding-bottom: toRem(35);
     }
   }
 }
