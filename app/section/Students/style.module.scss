@@ -9,7 +9,7 @@
     padding-top: toRem(50);
   }
   &__wrapper{
-
+    padding: 0 toRem(5);
   }
   &__card{
     padding: toRem(35) toRem(28) toRem(60) toRem(28);
@@ -20,6 +20,7 @@
     flex-direction: column;
     align-items: center;
     row-gap: toRem(20);
+    margin: 0 auto;
   }
   &__frame{
     max-width: toRem(118);
@@ -48,9 +49,51 @@
     color: $gray-color-simple;
   }
   &__slider{
-    &>div>div{
-      display: flex;
+    margin-right: toRem(-6);
+    margin-left: toRem(-10);
+    position: relative;
+  }
+  &__prev, &__next{
+    cursor: pointer;
+    position: absolute;
+    width: toRem(50);
+    height: toRem(50);
+    border-radius: 50%;
+    background-color: $green-bg-easy;
+    top: 50%;
+    z-index: 2;
+    &:before{
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: toRem(12);
+      height: toRem(12);
+      border-right: 3px solid $white-bg-light;
+      border-bottom: 3px solid $white-bg-light;
+    }
+  }
+  &__prev{
+    right: 100%;
+    transform: translate(80%, -50%);
+    &::before{
+      transform: translate(-50%, -50%) rotate(135deg);
+    }
+  }
+  &__next{
+    left: 100%;
+    transform: translate(-80%, -50%);
+    &::before{
+      transform: translate(-80%, -50%) rotate(-45deg);
+    }
+  }
+}
 
+@media screen and (max-width: 768px){
+  .students{
+    &__slider{
+      max-width: toRem(400);
+      margin: 0 auto;
     }
   }
 }

@@ -7,6 +7,8 @@ import Pricing from "../../section/Pricing";
 import Online from "../../section/Online";
 import Coaching from "../../section/Coaching";
 import Students from "../../section/Students";
+import IsApp from "../../section/IsApp";
+import Footer from "../../section/Footer";
 
 const Membership: NextPage = () => {
   return <Default title={'Membership'}>
@@ -24,6 +26,14 @@ const Membership: NextPage = () => {
       <div className={styles['membership__bg-gray']}>
         <div className='container'>
           <Students />
+        </div>
+      </div>
+      <div className='container'>
+        <IsApp />
+      </div>
+      <div className={styles['membership__footer']}>
+        <div className="container">
+          <Footer />
         </div>
       </div>
     </main>

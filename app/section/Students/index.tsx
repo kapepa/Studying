@@ -3,8 +3,31 @@ import style from "./style.module.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import {ResponsiveInterface} from "../../interface/ResponsiveInterface";
 
 const Students: FC = () => {
+  const responsive: ResponsiveInterface[] = [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+      }
+    },
+  ]
+
+  const SampleNextArrow: FC = ({onClick}: { onClick: () => {} }) => {
+    return <div className={style.students__next} onClick={onClick}/>;
+  }
+
+  const SamplePrevArrow: FC = ({onClick}: { onClick: () => {} }) => {
+    return <div className={style.students__prev} onClick={onClick}/>;
+  }
 
 
   return <section className={style.students}>
@@ -14,12 +37,10 @@ const Students: FC = () => {
         speed={500}
         infinite={true}
         slidesToShow={4}
-        slidesToScroll={3}
-        // centerMode={true}
-        // centerPadding={'50px'}
-        // className={style.students__slider}
-        // slide={'main'}
+        responsive={responsive}
         className={style.students__slider}
+        nextArrow={<SampleNextArrow/>}
+        prevArrow={<SamplePrevArrow/>}
       >
 
         <div className={style.students__wrapper}>
