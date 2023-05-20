@@ -2,6 +2,8 @@ import React, {FC} from "react";
 import style from "./style.module.scss";
 import {ResponsiveInterface} from "../../interface/ResponsiveInterface";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 interface SliderDefaultInterface {
   // children: React.ReactNode

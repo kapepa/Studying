@@ -1,8 +1,6 @@
 import React, {FC} from "react";
 import style from "./style.module.scss";
 import Link from "next/link";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import {ResponsiveInterface} from "../../interface/ResponsiveInterface";
 import SliderDefault from "../../component/SliderDefault";
 
@@ -10,10 +8,8 @@ const Related: FC = () => {
   let responsive: ResponsiveInterface[] = [
     {
       breakpoint: 1024,
-      settings: {
-        slidesToShow: 1,
-      }
-    }
+      settings: { slidesToShow: 1 }
+    },
   ]
 
   return <section className={style.related}>
