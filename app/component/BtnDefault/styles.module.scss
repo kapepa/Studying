@@ -57,6 +57,13 @@
       background-color: rgba($blue-bg-smoke, .3);
     }
   }
+  &__bg--blue-light{
+    color: $white-bg;
+    background-color: $blue-bg-lightblue;
+    &:hover {
+      background-color: rgba($blue-bg-lightblue, .3);
+    }
+  }
   &__bg--green{
     color: $green-color-easy;
     border: 1px solid $green-bg-easy;

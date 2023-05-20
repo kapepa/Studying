@@ -21,19 +21,51 @@
     border-bottom: 1px solid $gray-bg-simple;
   }
   &__cap{
-    padding: toRem(15);
+    padding: toRem(15) 0;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
   }
   &__subject{
     padding-left: toRem(36);
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: toRem(18);
+    line-height: toRem(32);
+    color: $black-color-pretty;
+    display: inline-block;
+    &::before{
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background-color: $green-bg-legend;
+      width: toRem(20);
+      height: toRem(20);
+      border-radius: 50%;
+    }
   }
   &__arrow{
-
+    width: toRem(10);
+    height: toRem(10);
+    border-bottom: 2px solid $gray-bg-simple;
+    border-right: 2px solid $gray-bg-simple;
+    transform: translateY(80%) rotate(45deg);
+    &--open{
+      transform: translateY(130%) rotate(-135deg);
+    }
   }
   &__stretch{
-
+    overflow: hidden;
+    height: 0;
+    &--open{
+      height: auto;
+    }
   }
   &__more{
-    padding: 0 toRem(36);
+    padding: 0 0 toRem(15) toRem(36);
     display: inline-block;
   }
 }

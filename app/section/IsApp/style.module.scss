@@ -1,0 +1,101 @@
+@import "./../../styles/variable.scss";
+@import "./../../styles/font.scss";
+@import "./../../styles/mixing.scss";
+
+.is-app{
+  padding-bottom: toRem(80);
+  &__top-board{
+    background-color: $black-bg-def;
+    border-radius: toRem(37);
+    padding: toRem(80) toRem(100);
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    column-gap: toRem(30);
+    row-gap: toRem(50);
+    align-items: center;
+  }
+  &__h{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    max-width: toRem(430);
+    font-size: toRem(36);
+    line-height: toRem(54);
+    color: $white-color;
+    flex: 1 1 toRem(420);
+    display: block;
+  }
+  &__interaction{
+    display: grid;
+    max-width: toRem(540);
+    grid-template-columns: repeat(2, minmax(toRem(256), auto));
+    grid-column-gap: toRem(25);
+    grid-row-gap: toRem(25);
+    flex: 1 1 toRem(450);
+  }
+  &__basic{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: toRem(90);
+    row-gap: toRem(90);
+  }
+  &__card{
+    max-width: toRem(786);
+    flex: 1 1 toRem(600);
+    border-radius: toRem(20);
+    box-shadow: 0 toRem(19) toRem(47) rgba($black-bg-begin, 0.1);
+    padding: toRem(55) toRem(32);
+  }
+  &__picture{
+    width: 100%;
+  }
+  &__title{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: toRem(26);
+    line-height: toRem(47);
+    color: $black-color;
+    padding: toRem(12) 0;
+  }
+  &__more{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(20);
+    line-height: toRem(36);
+    color: $gray-color-simple;
+    padding-bottom: toRem(60);
+    display: inline-block;
+  }
+  &__basement{
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .is-app{
+    &__top-board{
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__h{
+      font-size: toRem(32);
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px){
+  .is-app{
+    &__top-board{
+      transform: translateY(-30%);
+      padding: toRem(40) toRem(50);
+    }
+    &__interaction{
+      grid-template-columns: auto;
+      grid-auto-rows: auto;
+      max-width: toRem(340);
+    }
+  }
+}
