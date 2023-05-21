@@ -1,0 +1,83 @@
+@import "./../../styles/variable.scss";
+@import "./../../styles/font.scss";
+@import "./../../styles/mixing.scss";
+
+.lesson{
+  padding: toRem(50) 0 toRem(160) 0;
+  &__slider{
+    padding-top: toRem(50);
+  }
+  &__frame{
+    padding: 0 toRem(20);
+  }
+  &__card{
+    padding: toRem(20) toRem(20) toRem(12) toRem(20);
+    max-width: toRem(530);
+    background-color: $white-bg;
+    border-radius: toRem(20);
+  }
+  &__picture{
+    width: 100%;
+    height: toRem(250);
+    max-height: toRem(240);
+    border-radius: toRem(20);
+    object-fit: cover;
+  }
+  &__h{
+    padding-top: toRem(12);
+    padding-bottom: toRem(12);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: toRem(24);
+    line-height: toRem(43);
+    color: $black-color;
+  }
+  &__profile{
+    display: flex;
+    align-items: center;
+    padding-bottom: toRem(25);
+  }
+  &__avatart{
+    border-radius: 50%;
+    max-width: toRem(42);
+    max-height: toRem(42);
+    width: 100%;
+  }
+  &__name{
+    padding-left: toRem(20);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: toRem(18);
+    line-height: toRem(27);
+    color: $black-color-def;
+  }
+  &__line{
+    height: toRem(8);
+    width: 100%;
+    background-color: $gray-bg-perfecto;
+  }
+  &__bar{
+    height: inherit;
+    background-color: $green-bg-easy;
+  }
+  &__page{
+    padding-top: toRem(12);
+    display: inline-block;
+    text-align: right;
+    width: 100%;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 600;
+    font-size: toRem(14);
+    line-height: toRem(21);
+    color: rgba($black-bg-begin, 0.5);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .lesson{
+    &__slider{
+      max-width: toRem(500);
+      margin: 0 auto;
+    }
+  }
+}

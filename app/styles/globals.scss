@@ -84,6 +84,10 @@ ul, li{
   color: rgba($black-color-def, 0.8);
 }
 
+.lightblue{
+  background-color: $lightslategrey-bg-def;
+}
+
 @media only screen and (max-width : 1440px) {
   html{
     font-size: 14px;

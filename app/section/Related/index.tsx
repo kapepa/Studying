@@ -1,40 +1,21 @@
 import React, {FC} from "react";
 import style from "./style.module.scss";
 import Link from "next/link";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import {ResponsiveInterface} from "../../interface/ResponsiveInterface";
+import SliderDefault from "../../component/SliderDefault";
 
 const Related: FC = () => {
-  let responsive = [
+  let responsive: ResponsiveInterface[] = [
     {
       breakpoint: 1024,
-      settings: {
-        slidesToShow: 1,
-      }
-    }
+      settings: { slidesToShow: 1 }
+    },
   ]
-
-  const SampleNextArrow = ({onClick}) => {
-    return <div className={style['related__slick-next']} onClick={onClick}/>;
-  }
-
-  const SamplePrevArrow = ({onClick}) => {
-    return <div className={style['related__slick-prev']} onClick={onClick}/>;
-  }
 
   return <section className={style.related}>
     <h4 className="h-bold">Related Blog</h4>
     <div className={style.related__cards}>
-      <Slider
-        speed={500}
-        infinite={true}
-        slidesToShow={2}
-        responsive={responsive}
-        className={style.related__slider}
-        nextArrow={<SampleNextArrow />}
-        prevArrow={<SamplePrevArrow />}
-      >
+      <SliderDefault responsive={responsive} slidesToShow={2}>
         <div className={style.related__frame}>
           <div className={style.related__card}>
             <img className={style.related__photo} src={'/image/card-one.png'} alt={'background image'}/>
@@ -92,7 +73,7 @@ const Related: FC = () => {
           </div>
         </div>
 
-      </Slider>
+      </SliderDefault>
     </div>
   </section>
 };
