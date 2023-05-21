@@ -1,0 +1,78 @@
+@import "./../../styles/variable.scss";
+@import "./../../styles/font.scss";
+@import "./../../styles/mixing.scss";
+
+.choice{
+  padding: toRem(80) 0 toRem(100) 0;
+  &__profession{
+    padding-top: toRem(53);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: toRem(80);
+    row-gap: toRem(80);
+  }
+  &__cell{
+    padding: toRem(30) toRem(30) toRem(60) toRem(30);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: toRem(350);
+    box-shadow: 0 toRem(19) toRem(48) rgba($black-bg-begin, 0.1);
+    border-radius: toRem(20);
+    flex: 1 1 toRem(300);
+  }
+  &__square{
+    width: toRem(90);
+    height: toRem(90);
+    position: relative;
+    border-radius: toRem(4);
+    &--green{
+      background-color: rgba($green-bg-miracle, .3);
+    }
+    &--blue{
+      background-color: rgba($blue-bg-miracle, .3);
+    }
+    &--lightblue{
+      background-color: rgba($blue-bg-incredible, .3);
+    }
+    &--lightgreen{
+      background-color: rgba($green-bg-dream, .3);
+    }
+    &--yellow{
+      background-color: rgba($yellow-bg-pretty, .3);
+    }
+    &--red{
+      background-color: rgb($red-bg-light, .3)
+    }
+    &--black{
+      background-color: rgba($black-bg-strict, .3);
+    }
+  }
+  &__ico{
+    max-width: toRem(35);
+    max-height: toRem(35);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__h{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: toRem(30);
+    line-height: toRem(45);
+    color: $black-color-def;
+    padding: toRem(20) 0 toRem(25) 0;
+  }
+  &__span{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(18);
+    line-height: toRem(27);
+    text-align: center;
+    color: $gray-color-simple;
+  }
+}

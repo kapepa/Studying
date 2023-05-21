@@ -84,52 +84,6 @@
     font-size: toRem(20);
     //color: $gray-color-simple;
   }
-  &__slider{
-    position: relative;
-    &> div:nth-child(2){
-      margin: 0 toRem(-20);
-    }
-  }
-  &__slick-prev, &__slick-next{
-    position: absolute;
-    top: 100%;
-    right: 0;
-    transform: translate(0 , 0);
-    background-color: $green-bg-easy;
-    width: toRem(50);
-    height: toRem(50);
-    font-family: sans-serif;
-    cursor: pointer;
-    border-radius: toRem(4);
-    &:hover{
-      background-color: rgba($green-bg-easy, .5);
-    }
-    &:focus{
-      background-color: rgba($green-bg-easy, .5);
-    }
-    &::before{
-      content: "";
-      border: solid $white-color;
-      border-width: 0 toRem(3) toRem(3) 0;
-      display: inline-block;
-      padding: toRem(5);
-      position: absolute;
-      top: 50%;
-      right: 50%;
-    }
-  }
-  &__slick-prev{
-    transform: translate(-150%, 100%);
-    &::before{
-      transform: translate(50%, -50%) rotate(135deg);
-    }
-  }
-  &__slick-next{
-    transform: translateY(100%);
-    &::before{
-      transform: translate(50%, -50%) rotate(-45deg);
-    }
-  }
 }
 
 @media screen and (max-width: 1024px){
