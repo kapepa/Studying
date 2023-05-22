@@ -6,17 +6,21 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 interface SliderDefaultInterface {
-  // children: React.ReactNode
+  children: React.ReactNode
   slidesToShow: number
   responsive: ResponsiveInterface[]
 }
 
+interface SampleArrowInterface {
+  onClick: () => {}
+}
+
 const SliderDefault: FC<SliderDefaultInterface> = ({children, responsive, slidesToShow}) => {
-  const SampleNextArrow = ({onClick}) => {
+  const SampleNextArrow: FC = ({onClick}: SampleArrowInterface) => {
     return <div className={style['slider__slick-next']} onClick={onClick}/>;
   }
 
-  const SamplePrevArrow = ({onClick}) => {
+  const SamplePrevArrow: FC = ({onClick}: SampleArrowInterface) => {
     return <div className={style['slider__slick-prev']} onClick={onClick}/>;
   }
 
