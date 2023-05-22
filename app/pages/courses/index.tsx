@@ -7,6 +7,8 @@ import Lesson from "../../section/Lesson";
 import Choice from "../../section/Choice";
 import Recommended from "../../section/Recommended";
 import {SlideInterface} from "../../interface/SlideInterface";
+import Online from "../../section/Online";
+import Footer from "../../section/Footer";
 
 const Courses: NextPage = () => {
   const sliderRecommended: SlideInterface[] = [
@@ -42,6 +44,11 @@ const Courses: NextPage = () => {
       <div className='lightblue'>
         <div className='container'>
           <Recommended slides={sliderRecommended}/>
+        </div>
+      </div>
+      <div className="darkblue">
+        <div className='container'>
+          <Footer/>
         </div>
       </div>
     </div>

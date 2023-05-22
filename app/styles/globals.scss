@@ -98,6 +98,10 @@ ul, li{
   background-color: $lightslategrey-bg-def;
 }
 
+.darkblue{
+  background-color: $black-bg-def;
+}
+
 @media only screen and (max-width : 1440px) {
   html{
     font-size: 14px;
