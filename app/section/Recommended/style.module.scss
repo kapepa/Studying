@@ -3,5 +3,114 @@
 @import "./../../styles/mixing.scss";
 
 .recommended{
+  padding: toRem(100) 0 toRem(150) 0;
+  &__slider{
+    padding-top: toRem(50);
+  }
+}
 
+.rec-slide{
+  padding: toRem(20) toRem(20) toRem(35) toRem(20);
+  background-color: $white-bg;
+  border-radius: toRem(20);
+  box-shadow: 0 toRem(15) toRem(20) rgba($black-bg-begin, 0.1);
+  max-width: toRem(500);
+  display: flex;
+  flex-direction: column;
+  row-gap: toRem(20);
+  &__frame{
+    padding: toRem(20) toRem(20) toRem(30) toRem(20);
+  }
+  &__picture{
+    max-width: 100%;
+    width: 100%;
+    border-radius: toRem(20);
+    height: toRem(220);
+    object-fit: cover;
+  }
+  &__detailed{
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 2;
+    flex-shrink: 2;
+  }
+  &__info{
+    display: flex;
+    column-gap: toRem(10);
+    align-items: center;
+    &--gap-up{
+      column-gap: toRem(15);
+    }
+  }
+  &__ico{
+    max-width: toRem(26);
+    width: 100%;
+  }
+  &__subtitle{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: toRem(14);
+    line-height: toRem(25);
+    color: $gray-color-simple;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  &__h{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: toRem(24);
+    line-height: toRem(36);
+    color: $black-color;
+  }
+  &__desc{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: toRem(18);
+    line-height: toRem(32);
+    color: $gray-color-simple;
+  }
+  &__basement{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__avatar{
+    max-height: toRem(44);
+    max-width: toRem(44);
+    width: 100%;
+    border-radius: 50%;
+  }
+  &__full-name{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: toRem(18);
+    line-height: toRem(27);
+    color: $black-color-def;
+  }
+  &__old-price{
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: toRem(18);
+    line-height: toRem(27);
+    text-decoration-line: line-through;
+    color: rgba($black-color-def, 0.5);
+  }
+  &__current-price{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: toRem(24);
+    line-height: toRem(36);
+    color: $green-color-easy;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .recommended{
+    &__slider{
+      max-width: toRem(500);
+      margin: 0 auto;
+    }
+  }
 }

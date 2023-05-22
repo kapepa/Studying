@@ -76,6 +76,16 @@ ul, li{
   }
 }
 
+.slick-track {
+  display: flex !important;
+}
+.slick-slide {
+  height: inherit !important;
+  & div{
+    height: 100% !important;
+  }
+}
+
 .h-bold{
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -86,6 +96,10 @@ ul, li{
 
 .lightblue{
   background-color: $lightslategrey-bg-def;
+}
+
+.darkblue{
+  background-color: $black-bg-def;
 }
 
 @media only screen and (max-width : 1440px) {
