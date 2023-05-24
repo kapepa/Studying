@@ -1,0 +1,67 @@
+@import './../../styles/font.scss';
+@import './../../styles/variable.scss';
+@import './../../styles/mixing.scss';
+
+.acquisition{
+  padding: toRem(55) 0;
+  display: flex;
+  column-gap: toRem(50);
+  &__form{
+    padding: toRem(50);
+    max-width: toRem(960);
+    border-radius: toRem(20);
+    box-shadow: 0 toRem(19) toRem(47) rgba($black-bg-begin, 0.1);
+    flex: 1 1 toRem(900);
+  }
+  &__h{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: toRem(36);
+    line-height: toRem(54);
+    color: $black-color;
+    padding-bottom: toRem(9);
+  }
+  &__subtitle{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: toRem(18);
+    line-height: toRem(27);
+    color: $gray-color;
+    display: inline-block;
+    padding-bottom: toRem(38);
+  }
+  &__payment-way{
+    display: flex;
+    column-gap: toRem(20);
+    padding-bottom: toRem(85);
+  }
+  &__summary{
+    border-radius: toRem(20);
+    background-color: $lightslategrey-bg-def;
+    padding: toRem(30) toRem(36);
+    max-width: toRem(660);
+    flex: 1 1 toRem(600);
+  }
+}
+
+.radio-pay{
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: toRem(10);
+  &__image{
+    max-width: toRem(160);
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    border: 2px solid $gray-bg-perfecto;
+    border-radius: toRem(10);
+
+    &--checked{
+      border: 2px solid $green-bg-easy;
+    }
+  }
+  &__input{
+    display: none;
+  }
+
+}
