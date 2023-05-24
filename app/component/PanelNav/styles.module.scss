@@ -63,6 +63,9 @@
     }
     &--dark{
       color: $gray-color;
+      &::before{
+        background-color: $gray-color;
+      }
     }
   }
   &__auth{
