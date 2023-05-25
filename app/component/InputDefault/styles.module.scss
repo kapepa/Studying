@@ -3,5 +3,35 @@
 @import './../../styles/mixing.scss';
 
 .input-def{
-
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: toRem(37);
+  &__label{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: toRem(18);
+    line-height: toRem(27);
+    color: $gray-color;
+    padding-bottom: toRem(10);
+  }
+  &__input{
+    padding: toRem(16) toRem(21);
+    border: 1px solid $gray-bg-perfecto;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(18);
+    line-height: toRem(27);
+    color: $gray-color-sweet;
+    border-radius: toRem(10);
+  }
+  &__alert{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: inline-block;
+    transform: translateY(-25%);
+    color: $red-color-default;
+  }
 }
