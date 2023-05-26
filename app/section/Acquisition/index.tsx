@@ -1,11 +1,10 @@
-import React, {FC, useEffect, useRef, useState} from "react";
+import React, {FC, useRef, useState} from "react";
 import style from "./style.module.scss";
 import {useForm} from "react-hook-form";
 import BtnDefault from "../../component/BtnDefault";
 import classNames from "classnames";
 import {nameType, PaymentInterface} from "../../interface/PaymentInterface";
 import InputDefault from "../../component/InputDefault";
-import {types} from "sass";
 
 interface RadioPaymentInterface{
   value: string,
@@ -33,36 +32,12 @@ const Acquisition: FC = () => {
   }
 
   const inputDate = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const letter: string = e.key;
-    const length: number = letter.length;
     const value: string = e.currentTarget.value;
-    const isNumber: boolean = isNaN(Number(letter));
+    const sortNumber = value.split('').filter((letter) => !isNaN(Number(letter)));
 
-    if (length === 1 && isNumber) e.preventDefault();
-    if (length === 1 && !isNumber){
-      const space = value.split("").filter(sign => sign !== '/');
-      e.preventDefault();
+    if(sortNumber.length >= 2) sortNumber.splice(2, 0, '/')
 
-      if(value.length <= 4) {
-        e.currentTarget.value = `${e.currentTarget.value}${ space.length> 0 && space.length % 2 === 0 ? '/' : '' }${letter}`
-      }
-    }
-  }
-
-  const inputCVC = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    const letter: string = e.key;
-    const length: number = letter.length;
-    const value: string = e.currentTarget.value;
-    const isNumber: boolean = isNaN(Number(letter));
-
-    if (length === 1 && isNumber) e.preventDefault();
-    if (length === 1 && !isNumber){
-      e.preventDefault();
-
-      if(value.length <= 2) {
-        e.currentTarget.value = `${e.currentTarget.value}${letter}`;
-      }
-    }
+    e.currentTarget.value = sortNumber.join('')
   }
 
   const changePayment = (e: React.ChangeEvent<HTMLInputElement>) => setPayment({...payment, name: e.currentTarget.value as nameType});
@@ -134,7 +109,7 @@ const Acquisition: FC = () => {
         minLength={{value: 19, message: 'this card number is short'}}
         maxLength={{value: 19, message: 'this card number is long'}}
       />
-      <div>
+      <div className={style.acquisition__requisites}>
         <InputDefault
           id={'date'}
           label={'date'}
@@ -147,22 +122,59 @@ const Acquisition: FC = () => {
           minLength={{value: 5, message: 'this number card is short'}}
           maxLength={{value: 5, message: 'this date number is long'}}
         />
-        {/*<InputDefault*/}
-        {/*  id={'cvc'}*/}
-        {/*  label={'cvc'}*/}
-        {/*  type={'text'}*/}
-        {/*  title={'CVC'}*/}
-        {/*  errors={errors}*/}
-        {/*  register={register}*/}
-        {/*  isKeyDown={inputCVC}*/}
-        {/*  required={'cvc is required'}*/}
-        {/*  minLength={{value: 3, message: 'this cvc is short'}}*/}
-        {/*/>*/}
+        <InputDefault
+          id={'cvc'}
+          label={'cvc'}
+          type={'text'}
+          title={'CVC'}
+          errors={errors}
+          register={register}
+          required={'cvc is required'}
+          minLength={{value: 3, message: 'this cvc is short'}}
+          maxLength={{value: 3, message: 'this cvc is long'}}
+        />
       </div>
-      <BtnDefault text={"Confirm Payment"} shape={"rounding"} type={"submit"} bg={"light-green"}/>
+      <BtnDefault text={"Confirm Payment"} shape={"rounding"} type={"submit"} bg={"light-green"} classAddition={style['acquisition__btn-confirm']}/>
     </form>
-    <div className={style.acquisition__summary}>
+    <div className={`${style.acquisition__summary} ${style['acq-summary']}`}>
+      <h5 className={style['acq-summary__h']}>Summary</h5>
+      <div className={style['acq-summary__purchase']}>
 
+        <div className={style['acq-summary__cell']}>
+          <img className={style['acq-summary__picture']} src={"/image/classroom.png"} alt={'img'}/>
+          <div className={style['acq-summary__more']}>
+            <h6 className={style['acq-summary__title']}>adipising elit, sed do eiusmod tempor</h6>
+            <span className={style['acq-summary__subtitle']}>Lorem ipsum dollar...</span>
+            <span className={style['acq-summary__cost']}>$24.69</span>
+          </div>
+        </div>
+
+        <div className={style['acq-summary__cell']}>
+          <img className={style['acq-summary__picture']} src={"/image/classroom.png"} alt={'img'}/>
+          <div className={style['acq-summary__more']}>
+            <h6 className={style['acq-summary__title']}>adipising elit, sed do eiusmod tempor</h6>
+            <span className={style['acq-summary__subtitle']}>Lorem ipsum dollar...</span>
+            <span className={style['acq-summary__cost']}>$24.69</span>
+          </div>
+        </div>
+
+      </div>
+      <div className={style['acq-summary__template']}>
+        <span className={style['acq-summary__def']}>Subtotal</span>
+        <span className={style['acq-summary__def']}>$51.38</span>
+      </div>
+      <div className={style['acq-summary__template']}>
+        <span className={style['acq-summary__def']}>Coupon Discount</span>
+        <span className={style['acq-summary__def']}>0 %</span>
+      </div>
+      <div className={style['acq-summary__template']}>
+        <span className={style['acq-summary__def']}>TAX</span>
+        <span className={style['acq-summary__def']}>5</span>
+      </div>
+      <div className={style['acq-summary__template']}>
+        <span className={`${style['acq-summary__def']} ${style['acq-summary__def--black']}`}>Total</span>
+        <span className={`${style['acq-summary__def']} ${style['acq-summary__def--black']}`}>$56.38</span>
+      </div>
     </div>
   </section>
 }

@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import {UseFormRegister, Path} from "react-hook-form";
 import {PaymentInterface} from "../../interface/PaymentInterface";
 import {FieldErrors} from "react-hook-form/dist/types/errors";
+import classNames from "classnames";
 
 type InputType = "email" | "text" | "password" | "search";
 
@@ -20,8 +21,9 @@ interface InputDefaultInterface {
 }
 
 const InputDefault: FC<InputDefaultInterface> = (
-  {id, type, title, isChange, label, register, required, errors, minLength, maxLength,  }
+  {id, type, title, isChange = () => {}, label, register, required, errors, minLength, maxLength,  }
 ) => {
+  const classAlert = classNames({[styles['input-def__input--alert']]: (errors[label]?.type === 'required' || errors[label]?.type === 'minLength' || errors[label]?.type === 'maxLength')});
 
   return <div className={styles['input-def']}>
     <label className={styles['input-def__label']} htmlFor={id}>{title}</label>
@@ -29,7 +31,7 @@ const InputDefault: FC<InputDefaultInterface> = (
       id={id}
       type={type}
       maxLength={maxLength.value}
-      className={styles['input-def__input']}
+      className={`${styles['input-def__input']} ${classAlert}`}
       {...register(label, { required, minLength, maxLength, onChange: isChange })}
     />
     { errors[label]?.type === 'required' && <span className={styles['input-def__alert']} role="alert">{`${label} is required`}</span> }

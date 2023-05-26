@@ -6,12 +6,19 @@
   padding: toRem(55) 0;
   display: flex;
   column-gap: toRem(50);
+  row-gap: toRem(50);
+  justify-content: center;
+  flex-wrap: wrap;
   &__form{
     padding: toRem(50);
     max-width: toRem(960);
     border-radius: toRem(20);
     box-shadow: 0 toRem(19) toRem(47) rgba($black-bg-begin, 0.1);
     flex: 1 1 toRem(900);
+  }
+  &__requisites{
+    display: flex;
+    column-gap: toRem(36);
   }
   &__h{
     font-family: 'Poppins', sans-serif;
@@ -32,7 +39,9 @@
   }
   &__payment-way{
     display: flex;
+    flex-wrap: wrap;
     column-gap: toRem(20);
+    row-gap: toRem(20);
     padding-bottom: toRem(85);
   }
   &__summary{
@@ -41,7 +50,88 @@
     padding: toRem(30) toRem(36);
     max-width: toRem(660);
     flex: 1 1 toRem(600);
+    display: flex;
+    flex-direction: column;
+    align-self: baseline;
   }
+  &__btn-confirm{
+    width: 100%;
+  }
+}
+
+.acq-summary{
+  &__h{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(24);
+    line-height: toRem(36);
+    color: $black-color;
+    padding-bottom: toRem(30);
+  }
+  &__purchase{
+    display: flex;
+    flex-direction: column;
+  }
+  &__cell{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: toRem(22);
+    row-gap: toRem(22);
+    padding: toRem(20) 0;
+    border-bottom: 1px solid $gray-bg;
+  }
+  &__picture{
+    max-width: toRem(160);
+    border-radius: toRem(20);
+    object-fit: cover;
+    flex: 1 1 toRem(150);
+  }
+  &__more{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 toRem(350);
+  }
+  &__title{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(18);
+    line-height: toRem(32);
+    color: $black-color-def;
+  }
+  &__subtitle{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(18);
+    line-height: toRem(32);
+    color: $gray-color;
+  }
+  &__cost{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(24);
+    line-height: toRem(43);
+    color: $black-color-def;
+  }
+  &__template{
+    display: flex;
+    justify-content: space-between;
+    padding: toRem(11) 0;
+    border-bottom: 1px solid $gray-bg;
+    &:last-of-type{
+      border-bottom: none;
+    }
+  }
+  &__def{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: toRem(20);
+    line-height: toRem(36);
+    color: $gray-color;
+    &--black{
+      color: $black-color-def;
+    }
+  }
+
 }
 
 .radio-pay{
@@ -63,5 +153,12 @@
   &__input{
     display: none;
   }
+}
 
+@media screen and (max-width: 1024px){
+  .acquisition {
+    &__requisites {
+      flex-wrap: wrap;
+    }
+  }
 }

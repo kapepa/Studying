@@ -12,6 +12,7 @@ interface IBtnDefault {
   disabled?: boolean,
   href?: string,
   text: string,
+  classAddition?: string,
   bg?: keyof typeof BgColor,
   size?: keyof typeof BtnSize,
   type?: keyof typeof BtnType,
@@ -19,7 +20,7 @@ interface IBtnDefault {
   click?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void,
 }
 
-const BtnDefault: FC<IBtnDefault> = ({text, type = "button", size = "middle", bg = "default", click, href, disabled= false, shape = "circle"}) => {
+const BtnDefault: FC<IBtnDefault> = ({text,  classAddition= "", type = "button", size = "middle", bg = "default", click, href, disabled= false, shape = "circle"}) => {
   const btnBg = classNames({
     "btn-default__bg--def": !bg || bg === "default",
     "btn-default__bg--red": bg === "red",
@@ -42,7 +43,7 @@ const BtnDefault: FC<IBtnDefault> = ({text, type = "button", size = "middle", bg
 
   const button = () => <button
     onClick={click}
-    className={`${styles["btn-default"]} ${styles[shapeType]} ${styles[btnSize]} ${styles[btnBg]}`}
+    className={`${styles["btn-default"]} ${styles[shapeType]} ${styles[btnSize]} ${styles[btnBg]} ${classAddition}`}
     type={type}
     disabled={disabled}
   >{text}</button>
@@ -50,7 +51,7 @@ const BtnDefault: FC<IBtnDefault> = ({text, type = "button", size = "middle", bg
   const link = () => <Link
     href={href}
     onClick={click}
-    className={`${styles["btn-default"]} ${styles[shapeType]} ${styles[btnSize]} ${styles[btnBg]}`}
+    className={`${styles["btn-default"]} ${styles[shapeType]} ${styles[btnSize]} ${styles[btnBg]} ${classAddition}`}
   >{text}</Link>
 
   return (!!href ? link : button)();
