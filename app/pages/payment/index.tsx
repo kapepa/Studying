@@ -4,6 +4,7 @@ import Default from "../../core/layouts/default";
 import PanelNav from "../../component/PanelNav";
 import React from "react";
 import Acquisition from "../../section/Acquisition";
+import Education from "../../section/Education";
 
 const Payment: NextPage = () => {
   return <Default title={"Payment"}>
@@ -11,6 +12,9 @@ const Payment: NextPage = () => {
       <PanelNav theme={'dark'}/>
       <div className="container">
         <Acquisition/>
+      </div>
+      <div className="container">
+        <Education/>
       </div>
     </div>
   </Default>

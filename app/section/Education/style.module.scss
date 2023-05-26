@@ -1,0 +1,13 @@
+@import './../../styles/font.scss';
+@import './../../styles/variable.scss';
+@import './../../styles/mixing.scss';
+
+.education{
+  padding: toRem(105) 0 toRem(90) 0;
+  &__deals{
+    padding-top: toRem(70);
+  }
+  &__deal{
+
+  }
+}
