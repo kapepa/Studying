@@ -1,0 +1,100 @@
+@import './../../styles/font.scss';
+@import './../../styles/variable.scss';
+@import './../../styles/mixing.scss';
+
+.education{
+  padding: toRem(105) 0 toRem(90) 0;
+  &__deals{
+    padding-top: toRem(70);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: toRem(70);
+    row-gap: toRem(70);
+  }
+  &__deal{
+    border-radius: toRem(40);
+    position: relative;
+    overflow: hidden;
+    max-width: toRem(500);
+    flex: 1 1 toRem(470);
+    min-width: 280px;
+    &::before{
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+  }
+  &__bg{
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    background-color: rgba($black-bg-begin, .4);;
+  }
+  &__inner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($black-bg-begin, .4);
+    padding: toRem(45);
+    color: $white-color;
+    font-family: 'Poppins', sans-serif;
+  }
+  &__square{
+    width: toRem(125);
+    height: toRem(125);
+    font-style: normal;
+    font-weight: 700;
+    font-size: toRem(50);
+    line-height: toRem(75);
+    background-color: $green-bg-easy;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: toRem(10);
+    padding: toRem(8);
+  }
+  &__h{
+    padding-top: toRem(28);
+    padding-bottom: toRem(8);
+    font-weight: 700;
+    font-size: toRem(28);
+    line-height: toRem(42);
+  }
+  &__span{
+    font-weight: 500;
+    font-size: toRem(20);
+    line-height: toRem(36);
+  }
+}
+
+@media screen and (max-width: 425px){
+  .education{
+    &__square{
+      width: toRem(90);
+      height: toRem(90);
+      font-size: toRem(35);
+      line-height: toRem(60);
+    }
+    &__inner{
+      padding: toRem(45);
+    }
+    &__h{
+      padding-top: toRem(18);
+      font-size: toRem(25);
+      line-height: toRem(36);
+    }
+    &__span{
+      font-size: toRem(17);
+      line-height: toRem(25);
+    }
+  }
+}

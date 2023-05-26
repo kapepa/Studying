@@ -25,6 +25,10 @@
     line-height: toRem(27);
     color: $gray-color-sweet;
     border-radius: toRem(10);
+    outline: none;
+    &--alert{
+      border: 1px solid $red-color-default;
+    }
   }
   &__alert{
     position: absolute;
