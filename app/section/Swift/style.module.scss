@@ -3,5 +3,103 @@
 @import "./../../styles/mixing.scss";
 
 .swift{
+  &__bg{
+    min-width: 100%;
+    width: 100%;
+  }
+  &__main{
+    padding-top: toRem(80);
+    padding-bottom: toRem(30);
+    font-family: 'Poppins', sans-serif;
+  }
+  &__h{
+    font-weight: 600;
+    font-size: toRem(44);
+    line-height: toRem(79);
+    color: $blue-color-dark;
+    padding-bottom: toRem(24);
+  }
+  &__letter{
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(26);
+    padding-bottom: toRem(31);
+    border-bottom: 1px solid rgba($gray-bg-simple, .5);
+  }
+  &__cell{
+    display: inline-block;
+    font-weight: 400;
+    font-size: toRem(24);
+    line-height: toRem(43);
+    color: $gray-color-simple;
+  }
+  &__tags{
+    display: flex;
+    column-gap: toRem(35);
+    row-gap: toRem(35);
+    flex-wrap: wrap;
+  }
+  &__tag{
+    background-color: rgba($green-bg-easy, .1);
+    padding: toRem(13) toRem(26);
+    border-radius: toRem(36);
+    font-weight: 400;
+    font-size: toRem(16);
+    line-height: toRem(24);
+    color: $gray-color-simple;
+  }
+  &__basement{
+    display: flex;
+    justify-content: space-between;
+    column-gap: toRem(20);
+    row-gap: toRem(20);
+    flex-wrap: wrap;
+    padding-top: toRem(30);
+  }
+  &__profile{
+    display: flex;
+    align-items: center;
+    column-gap: toRem(20);
+    flex: 1 1 toRem(150);
+  }
+  &__avatar{
+    max-width: toRem(77);
+    width: 100%;
+    height: toRem(77);
+    border-radius: toRem(10);
+  }
+  &__data{
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(6);
+  }
+  &__subtitle{
+    font-weight: 500;
+    font-size: toRem(12);
+    line-height: toRem(18);
+    color: $gray-color-simple;
+  }
+  &__name{
+    font-weight: 500;
+    font-size: toRem(18);
+    line-height: toRem(27);
+    color: $black-color-def;
+  }
+  &__action{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 toRem(232);
+    max-width: toRem(232);
+  }
+}
 
+@media screen and (max-width: 425px) {
+  .swift{
+    &__profile, &__basement{
+      justify-content: center;
+    }
+    &__tags{
+      justify-content: center;
+    }
+  }
 }
