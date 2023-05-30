@@ -1,0 +1,66 @@
+@import './../../styles/font.scss';
+@import './../../styles/variable.scss';
+@import './../../styles/mixing.scss';
+
+.scan{
+  position: relative;
+  padding: toRem(80) 0;
+  overflow: hidden;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($green-bg-easy, .6);
+    z-index: 1;
+  }
+  &__bg{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    object-fit: contain;
+    transform: translateY(-50%);
+  }
+  &__area{
+    position: relative;
+    z-index: 2;
+    max-width: toRem(1320);
+    margin: 0 auto;
+  }
+  &__find-list{
+    display: flex;
+    justify-content: center;
+    column-gap: toRem(20);
+    row-gap: toRem(20);
+    padding-top: toRem(20);
+  }
+  &__find-cell{
+    padding: toRem(19);
+    background-color: $white-bg;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: toRem(24);
+    line-height: toRem(36);
+    color: $black-color;
+    text-align: center;
+    flex: 1 1 toRem(200);
+    border-radius: toRem(10);
+    white-space: nowrap;
+    max-width: toRem(300);
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
+@media screen and (max-width: 1025px){
+  .scan{
+    &__find-list{
+      flex-wrap: wrap;
+    }
+  }
+}
