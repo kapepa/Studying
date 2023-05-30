@@ -1,0 +1,155 @@
+@import "./../../styles/variable.scss";
+@import "./../../styles/font.scss";
+@import "./../../styles/mixing.scss";
+
+.about{
+  padding: toRem(65) 0 toRem(65) 0;
+  &__area{
+    background-color: rgba($lightslategrey-bg-def, .2);
+    border-radius: toRem(20);
+    padding: toRem(33);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: toRem(40);
+    row-gap: toRem(40);
+    flex-wrap: wrap;
+  }
+  &__know{
+    font-family: 'Poppins', sans-serif;
+    flex: 1 1 toRem(350);
+  }
+  &__layers{
+    max-width: toRem(350);
+    margin: 0 auto;
+  }
+  &__h{
+    font-weight: 600;
+    font-size: toRem(30);
+    line-height: toRem(45);
+    color: $black-color;
+    padding-bottom: toRem(25);
+  }
+  &__ul{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: toRem(20);
+  }
+  &__li{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: toRem(18);
+    line-height: toRem(32);
+    color: $black-color-pretty;
+    padding-left: toRem(26);
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: toRem(20);
+      height: toRem(20);
+      border-radius: 50%;
+      background-color: $green-bg-legend;
+      transform: translateY(-50%);
+    }
+  }
+  &__basement{
+    max-width: toRem(310);
+  }
+  &__possibility{
+    position: relative;
+    flex: 1 1 toRem(740);
+    max-width: toRem(820);
+  }
+}
+
+.possibility{
+  max-width: toRem(820);
+  width: 100%;
+  &__board{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    max-width: toRem(710);
+    max-height: toRem(440);
+  }
+  &__community{
+    padding: toRem(48) toRem(36);
+    display: flex;
+    justify-content: space-between;
+    column-gap: toRem(60);
+  }
+  &__teacher{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: toRem(36);
+    max-width: toRem(335);
+  }
+  &__teacher-avatar{
+    max-width: toRem(225);
+    width: 100%;
+    border-radius: toRem(20);
+  }
+  &__action{
+    margin-top: toRem(37);
+    display: flex;
+    column-gap: toRem(30);
+    max-height: toRem(46);
+  }
+  &__grid{
+    display: grid;
+    position: relative;
+    grid-template-columns: toRem(150) toRem(210);
+    grid-row-gap: toRem(22);
+    grid-column-gap: toRem(22);
+  }
+  &__people{
+    border-radius: toRem(20);
+    max-width: 100%;
+    width: 100%;
+    &:nth-child(1), &:nth-child(2){
+      align-self: flex-end;
+    }
+    &:nth-child(2){
+      max-width: toRem(180);
+      height: toRem(180);
+      object-fit: cover;
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  .about{
+    &__possibility{
+      padding-right: 0;
+      padding-bottom: 0;
+    }
+  }
+  .possibility{
+    &__grid{
+      display: none;
+    }
+    &__board{
+      max-width: 100%;
+    }
+    &__community{
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 425px){
+  .possibility{
+    &__board{
+      object-fit: none;
+    }
+  }
+}
