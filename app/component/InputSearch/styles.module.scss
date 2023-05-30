@@ -1,0 +1,56 @@
+@import './../../styles/font.scss';
+@import './../../styles/variable.scss';
+@import './../../styles/mixing.scss';
+
+.input-search{
+  background-color: $white-color;
+  padding: toRem(5);
+  border-radius: toRem(10);
+  display: flex;
+  column-gap: toRem(15);
+  justify-content: space-between;
+  &__input{
+    padding: toRem(15) toRem(30);
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(20);
+    line-height: toRem(30);
+    color: rgba(131, 131, 154, 1);
+    flex: 1 1 toRem(200);
+  }
+  &__btn{
+    flex: 1 1 toRem(185);
+    max-width: toRem(185);
+    background-color: $green-bg-easy;
+    border-radius: toRem(12);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: toRem(24);
+    line-height: toRem(36);
+    color: $white-bg;
+    cursor: pointer;
+    border: none;
+    transition: background-color .25s linear, box-shadow .25s linear;
+    &:hover{
+      background-color: rgba($green-bg-easy, .8);
+    }
+    &:active{
+      box-shadow: inset 0 toRem(-3) toRem(3) 0 rgba($black-bg-begin, .75);
+    }
+  }
+}
+
+@media screen and (max-width: 425px){
+  .input-search{
+    &__input{
+      min-width: toRem(250);
+      padding: toRem(7) toRem(15);
+      flex: 1 1 toRem(50);
+    }
+    &__btn{
+      font-size: toRem(20);
+    }
+  }
+}
