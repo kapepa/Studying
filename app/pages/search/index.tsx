@@ -12,7 +12,7 @@ const Search: NextPage = () => {
       <PanelNav theme={'dark'}/>
       <Scan/>
       <div className="container">
-        <About />
+        <About/>
       </div>
     </div>
   </Default>
