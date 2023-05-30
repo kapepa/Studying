@@ -1,15 +1,17 @@
-import React, {FC, useState} from "react";
+import React, {FC, useEffect, useState} from "react";
 import styles from "./styles.module.scss"
 
 interface InputSearchInterface {
-  cd: (search: string) => void
+  cd: (search: string) => void,
+  toSearch: string
 }
 
-const InputSearch: FC<InputSearchInterface> = ({cd}) => {
+const InputSearch: FC<InputSearchInterface> = ({cd, toSearch}) => {
   const [input, setInput] = useState<string>();
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.currentTarget.value);
+    e.currentTarget.focus()
   }
 
   const onSearch = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -18,9 +20,25 @@ const InputSearch: FC<InputSearchInterface> = ({cd}) => {
     setInput('')
   }
 
+  useEffect(() => {
+    if(!!toSearch) setInput(toSearch);
+  },[toSearch])
+
   return <div className={styles['input-search']}>
-    <input onChange={onChange} className={styles['input-search__input']} type={"text"} name={"search"} placeholder={"Search your favourite course"} />
-    <button onClick={onSearch} className={styles['input-search__btn']} type={"button"}>Search</button>
+    <input
+      onChange={onChange}
+      className={styles['input-search__input']}
+      type={"text"}
+      name={"search"}
+      autoFocus={true}
+      placeholder={"Search your favourite course"}
+      defaultValue={input || toSearch}
+      key={input || toSearch}
+    />
+    <button
+      onClick={onSearch}
+      className={styles['input-search__btn']}
+      type={"button"}>Search</button>
   </div>
 }
 

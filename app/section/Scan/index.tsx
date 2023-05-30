@@ -1,8 +1,17 @@
-import {FC} from "react";
+import React, {FC, useCallback, useState} from "react";
 import style from "./style.module.scss";
 import InputSearch from "../../component/InputSearch";
 
 const Scan: FC = () => {
+  let [search, setSearch] = useState<string>()
+  const clickSubject = (e: React.MouseEvent<HTMLDivElement>) => {
+    setSearch(e.currentTarget.dataset['search'])
+  }
+
+  const toSearch = useCallback(() => {
+    return search;
+  }, [search])
+
   return <section className={style.scan}>
     <picture>
       <source srcSet={"/image/classroom425x284.png"} media={"(max-width: 425px)"}/>
@@ -12,7 +21,15 @@ const Scan: FC = () => {
     </picture>
     <div className="container">
       <div className={style.scan__area}>
-        <InputSearch cd={(search: string) => console.log(search)}/>
+        <InputSearch cd={(search: string) => console.log(search)} toSearch={toSearch()}/>
+        <div className={style['scan__find-list']}>
+          <div onClick={clickSubject} className={style['scan__find-cell']} data-search={'subject'}>Subject</div>
+          <div onClick={clickSubject} className={style['scan__find-cell']} data-search={'partner'}>Partner</div>
+          <div onClick={clickSubject} className={style['scan__find-cell']} data-search={'program'}>Program</div>
+          <div onClick={clickSubject} className={style['scan__find-cell']} data-search={'language'}>Language</div>
+          <div onClick={clickSubject} className={style['scan__find-cell']} data-search={'abaliability'}>Abaliability</div>
+          <div onClick={clickSubject} className={style['scan__find-cell']} data-search={'learning type'}>Learning Type</div>
+        </div>
       </div>
     </div>
   </section>
