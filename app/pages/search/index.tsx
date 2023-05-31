@@ -5,6 +5,7 @@ import PanelNav from "../../component/PanelNav";
 import React from "react";
 import Scan from "../../section/Scan";
 import About from "../../section/About";
+import Real from "../../section/Real";
 
 const Search: NextPage = () => {
   return <Default title={'Search'}>
@@ -13,6 +14,9 @@ const Search: NextPage = () => {
       <Scan/>
       <div className="container">
         <About/>
+      </div>
+      <div className="container">
+        <Real/>
       </div>
     </div>
   </Default>
