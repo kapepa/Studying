@@ -6,6 +6,7 @@ import React from "react";
 import Scan from "../../section/Scan";
 import About from "../../section/About";
 import Real from "../../section/Real";
+import Comment from "../../section/Comment";
 
 const Search: NextPage = () => {
   return <Default title={'Search'}>
@@ -17,6 +18,11 @@ const Search: NextPage = () => {
       </div>
       <div className="container">
         <Real/>
+      </div>
+      <div className='lightblue'>
+        <div className="container">
+          <Comment/>
+        </div>
       </div>
     </div>
   </Default>

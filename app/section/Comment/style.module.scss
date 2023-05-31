@@ -1,0 +1,208 @@
+@import "./../../styles/variable.scss";
+@import "./../../styles/font.scss";
+@import "./../../styles/mixing.scss";
+
+.comment{
+  padding: toRem(70) 0 toRem(80) 0;
+  font-family: 'Poppins', sans-serif;
+  &__frame{
+    background-color: $white-bg-light;
+    border-radius: toRem(40);
+    padding: toRem(60);
+    margin-top: toRem(70);
+    display: flex;
+    align-items: center;
+    column-gap: toRem(110);
+    row-gap: toRem(110);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__circle{
+    max-height: toRem(510);
+    max-width: toRem(520);
+    padding-top: toRem(22);
+    padding-left: toRem(70);
+    padding-bottom: toRem(40);
+    position: relative;
+    z-index: 1;
+    flex: 1 1 toRem(520);
+
+    &::before{
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: toRem(150);
+      height: toRem(150);
+      border-radius: 50%;
+      background-color: rgba($tomato-bg-pretty, .6);
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      top: 0;
+      right: toRem(60);
+      width: toRem(105);
+      height: toRem(105);
+      border-radius: 50%;
+      background-color: rgba($yellow-bg-simple, .6);
+    }
+  }
+  &__decorate{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: toRem(240);
+    height: toRem(240);
+    border-radius: 50%;
+    background-color: rgba($green-bg-gift, .6);
+  }
+  &__avatar{
+    max-width: toRem(450);
+    height: toRem(450);
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 toRem(4) toRem(4) rgba($black-bg-begin, 0.25);
+  }
+  &__share{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 toRem(500);
+  }
+  &__nested{
+    padding: toRem(20);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+  }
+  &__name{
+    font-weight: 700;
+    font-size: toRem(30);
+    line-height: toRem(45);
+    color: $black-color;
+    padding-bottom: toRem(31);
+  }
+  &__email{
+    font-weight: 500;
+    font-size: toRem(24);
+    line-height: toRem(36);
+    color: $black-color;
+    padding-bottom: toRem(19);
+  }
+  &__letter{
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(5);
+    padding-bottom: toRem(31);
+  }
+  &__span{
+    font-weight: 400;
+    font-size: toRem(18);
+    line-height: toRem(32);
+    color: $gray-color-simple;
+  }
+  &__social{
+    display: flex;
+    column-gap: toRem(25);
+  }
+  &__link{
+    cursor: pointer;
+  }
+  &__ico{
+    max-width: toRem(32);
+    width: 100%;
+  }
+  &__community{
+    display: flex;
+    //flex-direction: column;
+    flex: 1 1 toRem(80);
+    row-gap: toRem(25);
+    column-gap: toRem(25);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__people{
+    flex: 1 1 toRem(80);
+  }
+  &__face{
+    max-width: toRem(80);
+    width: 100%;
+    height: toRem(80);
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .comment{
+    &__frame{
+      padding: toRem(42);
+      margin-top: toRem(49);
+      column-gap: toRem(73);
+      row-gap: toRem(73);
+    }
+    &__circle{
+      max-height: toRem(357);
+      max-width: toRem(364);
+      padding-top: toRem(15);
+      padding-left: toRem(49);
+      padding-bottom: toRem(28);
+      &::before{
+        width: toRem(105);
+        height: toRem(105);
+      }
+      &::after{
+        right: toRem(42);
+        width: toRem(73);
+        height: toRem(73);
+      }
+    }
+    &__decorate{
+      width: toRem(168);
+      height: toRem(168);
+    }
+    &__avatar{
+      width: toRem(315);
+      height: toRem(315);
+    }
+  }
+}
+
+@media screen and (max-width: 425px){
+  .comment{
+    &__frame{
+      padding: toRem(29);
+      margin-top: toRem(34);
+      column-gap: toRem(51);
+      row-gap: toRem(51);
+    }
+    &__circle{
+      max-height: toRem(249);
+      max-width: toRem(254);
+      padding-top: toRem(10);
+      padding-left: toRem(34);
+      padding-bottom: toRem(19);
+      &::before{
+        width: toRem(73);
+        height: toRem(73);
+      }
+      &::after{
+        right: toRem(29);
+        width: toRem(51);
+        height: toRem(51);
+      }
+    }
+    &__decorate{
+      width: toRem(117);
+      height: toRem(117);
+    }
+    &__avatar{
+      width: toRem(220);
+      height: toRem(220);
+    }
+  }
+}
