@@ -1,0 +1,109 @@
+@import "./../../styles/variable.scss";
+@import "./../../styles/font.scss";
+@import "./../../styles/mixing.scss";
+
+.assistant{
+  padding: toRem(30) 0;
+  &__bg{
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &__area{
+    position: relative;
+    padding: toRem(33);
+    border-radius: toRem(20);
+    overflow: hidden;
+    &::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba($black-bg-begin, .4);
+      z-index: 1;
+    }
+  }
+  &__base{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    column-gap: toRem(34);
+  }
+  &__picture{
+    padding: toRem(12);
+    max-width: toRem(363);
+    width: 100%;
+    border-radius: 50%;
+    background-color: rgba($white-bg, .8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__face{
+    max-width: 100%;
+    width: 100%;
+    border-radius: 50%;
+  }
+  &__more{
+    padding: toRem(42);
+    background-color: rgba($white-bg, .8);
+    border-radius: toRem(20);
+    flex: 1 1 toRem(800);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: toRem(15);
+  }
+  &__top{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__info{
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(7);
+  }
+  &__h{
+    font-weight: 500;
+    font-size: toRem(30);
+    line-height: toRem(45);
+    color: $black-color-def;
+  }
+  &__subtitle{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: toRem(18);
+    line-height: toRem(32);
+    color: rgba($black-color-pretty, .7);
+  }
+  &__text{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: toRem(25);
+    line-height: toRem(32);
+    color: $black-color-pretty;
+    display: inline-block;
+  }
+  &__additional{
+    display: flex;
+    justify-content: center;
+    column-gap: toRem(25);
+    padding-top: toRem(10);
+  }
+  &__link{
+
+  }
+  &__ico{
+
+    max-width: toRem(32);
+    width: 100%;
+  }
+}
