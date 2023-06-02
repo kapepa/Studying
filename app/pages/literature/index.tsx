@@ -5,6 +5,7 @@ import PanelNav from "../../component/PanelNav";
 import React from "react";
 import Assistant from "../../section/Assistant";
 import Exhibition from "../../section/Exhibition";
+import Footer from "../../section/Footer";
 
 const Literature: NextPage = () => {
   let array = new Array([
@@ -26,6 +27,11 @@ const Literature: NextPage = () => {
       </div>
       <div className="container">
         <Exhibition subject={["About", "Course", "Notes", "Project", "Podcast", "Book", "Review"]} lot={lot} lotLength={lot.length}/>
+      </div>
+      <div className='darkblue'>
+        <div className="container">
+          <Footer/>
+        </div>
       </div>
     </div>
   </Default>
