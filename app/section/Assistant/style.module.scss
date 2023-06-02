@@ -35,8 +35,16 @@
     z-index: 2;
     display: flex;
     column-gap: toRem(34);
+    row-gap: toRem(34);
+    flex-wrap: wrap;
+    justify-content: center;
   }
   &__picture{
+    flex: 0 1 toRem(360);
+    display: flex;
+    align-items: center;
+  }
+  &__carpet{
     padding: toRem(12);
     max-width: toRem(363);
     width: 100%;
@@ -102,8 +110,28 @@
 
   }
   &__ico{
-
     max-width: toRem(32);
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .assistant{
+    &__top{
+      flex-wrap: wrap;
+      row-gap: toRem(20);
+    }
+  }
+}
+
+@media screen and (max-width: 425px){
+  .assistant{
+    &__area{
+      position: relative;
+      padding: toRem(20);
+    }
+    &__more{
+      padding: toRem(22);
+    }
   }
 }

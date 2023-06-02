@@ -9,7 +9,9 @@ const Assistant: FC = () => {
       <img className={style.assistant__bg} src={"/image/notebook-desk.jpg"} alt={"bg"}/>
       <div className={style.assistant__base}>
         <div className={style.assistant__picture}>
-          <img className={style.assistant__face} src={"/image/community_people_two.png"} alt={"assistant"}/>
+          <div className={style.assistant__carpet}>
+            <img className={style.assistant__face} src={"/image/community_people_two.png"} alt={"assistant"}/>
+          </div>
         </div>
         <div className={style.assistant__more}>
           <div className={style.assistant__top}>
