@@ -3,6 +3,7 @@
 @import "./../../styles/mixing.scss";
 
 .exhibition{
+  padding-bottom: toRem(52);
   &__type{
     display: flex;
     column-gap: toRem(25);
@@ -39,6 +40,10 @@
     column-gap: toRem(50);
     row-gap: toRem(50);
     flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__pagination{
+    display: flex;
     justify-content: center;
   }
 }

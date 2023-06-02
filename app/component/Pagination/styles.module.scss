@@ -1,0 +1,48 @@
+@import "./../../styles/variable.scss";
+@import "./../../styles/font.scss";
+@import "./../../styles/mixing.scss";
+
+.pagination{
+  display: flex;
+  &__square{
+    width: toRem(70);
+    height: toRem(70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(30);
+    line-height: toRem(45);
+    color: $black-color-def;
+    &--active{
+      background-color: $green-bg-easy;
+      color: $white-color;
+    }
+    &--pointer{
+      cursor: pointer;
+    }
+  }
+  &__edge{
+    position: relative;
+    background-color: rgba($green-bg-easy, .2);
+    &::before{
+      content: "";
+      position: absolute;
+      height: toRem(14);
+      width: toRem(14);
+      border-left: toRem(6) solid $green-bg-easy;
+      border-bottom: toRem(6) solid $green-bg-easy;
+    }
+    &--left{
+      &::before{
+        transform: translateX(25%) rotate(45deg);
+      }
+    }
+    &--right{
+      &::before{
+        transform: translateX(-25%) rotate(-135deg);
+      }
+    }
+  }
+}

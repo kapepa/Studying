@@ -1,6 +1,7 @@
 import React, {FC, useEffect, useState} from "react";
 import style from "./style.module.scss";
 import classNames from "classnames";
+import Pagination from "../../component/Pagination";
 
 interface LotInterface {
   name: string,
@@ -8,18 +9,35 @@ interface LotInterface {
   img: string
 }
 
+interface GeneratorInterface{
+  max: number;
+  currentPage: number;
+}
+
 interface ExhibitionInterface {
   subject: string[];
   lot: LotInterface[];
+  lotLength: number;
+  step?: number;
 }
 
-const Exhibition: FC<ExhibitionInterface> = ({subject, lot}) => {
+const Exhibition: FC<ExhibitionInterface> = ({subject, lot, lotLength, step= 6 }) => {
   const [subjectSelect, setSubjectSelect] = useState<string>();
-  const [gallery, setGallery] = useState<LotInterface[]>()
+  const [gallery, setGallery] = useState<LotInterface[]>();
+  const [generator, setGenerator] = useState<GeneratorInterface>()
+
+  const changePage = (page: number) => {
+    const calcPage: number = (page - 1) * step;
+    const selectLot = lot.slice(calcPage, calcPage + step);
+
+    setGallery(selectLot);
+    setGenerator((prev) => ({...prev, currentPage: page}))
+  }
 
   useEffect(() => {
     setSubjectSelect(subject[0]);
-    setGallery(lot)
+    setGallery(lot.slice(0,step));
+    setGenerator({max: Math.ceil(lotLength / step), currentPage: 1});
   }, [])
 
   return <section className={style.exhibition}>
@@ -47,6 +65,9 @@ const Exhibition: FC<ExhibitionInterface> = ({subject, lot}) => {
           </div>
         </div>
       ))}
+    </div>
+    <div className={style.exhibition__pagination}>
+      {!!generator && <Pagination max={generator.max} changePage={changePage} currentPage={generator.currentPage}/>}
     </div>
   </section>
 }
