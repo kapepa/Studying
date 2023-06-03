@@ -1,0 +1,28 @@
+@import './../../styles/font.scss';
+@import './../../styles/variable.scss';
+@import './../../styles/mixing.scss';
+
+.x-close{
+  position: relative;
+  cursor: pointer;
+  width: toRem(45);
+  height: toRem(45);
+  border: none;
+  background-color: transparent;
+  &::before, &::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    width: toRem(6);
+    background-color: $lightslategrey-bg-def;
+    border-radius: toRem(3);
+  }
+  &::before{
+    transform: translateX(-50%) rotate(45deg);
+  }
+  &::after{
+    transform: translateX(-50%) rotate(-45deg);;
+  }
+}
