@@ -1,0 +1,53 @@
+@import './../../styles/font.scss';
+@import './../../styles/variable.scss';
+@import './../../styles/mixing.scss';
+
+.popup-speaker{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($black-bg-begin, .3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__window{
+    position: relative;
+    background-color: rgba($lightslategrey-bg-def, .2);
+    padding: toRem(90);
+    border-radius: toRem(20);
+    overflow: hidden;
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $white-bg;
+      z-index: -1;
+    }
+  }
+  &__x-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-50%, 50%);
+  }
+  &__base{
+
+  }
+  &__frame{
+
+  }
+  &__video{
+
+  }
+  &__dashboard{
+
+  }
+  &__control{
+
+  }
+}
