@@ -1,4 +1,5 @@
 import React from "react";
+import {GetServerSideProps, NextPage} from "next";
 import Default from "../../core/layouts/default/index";
 import PanelNav from "../../component/PanelNav/index";
 import styles from "./styles.module.scss";
@@ -11,7 +12,7 @@ import Explore from "../../section/Explore/index.";
 import Review from "../../section/Review";
 import News from "../../section/News/index.";
 import Footer from "../../section/Footer";
-import {NextPage} from "next";
+
 
 const Home: NextPage = () => {
   return (
@@ -64,5 +65,12 @@ const Home: NextPage = () => {
     </Default>
   );
 }
+
+export async function getServerSideProps(context: GetServerSideProps) {
+  return {
+    props: {},
+  };
+}
+
 
 export default Home;
