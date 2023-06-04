@@ -36,18 +36,52 @@
     transform: translate(-50%, 50%);
   }
   &__base{
-
-  }
-  &__frame{
-
+    position: relative;
   }
   &__video{
-
+    border-radius: toRem(24);
+    position: relative;
   }
   &__dashboard{
-
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: toRem(165);
+    padding: 0 toRem(50) toRem(25) toRem(50);
+  }
+  &__frame{
+    position: relative;
+    padding: toRem(38);
+    display: flex;
+    justify-content: center;
+    column-gap: toRem(30);
+    row-gap: toRem(30);
+    border-radius: toRem(30);
+    background-color: $white-color;
+    z-index: 10;
+    max-height: toRem(142);
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba($lightslategrey-bg-def, .2);
+      z-index: -1;
+    }
   }
   &__control{
-
+    background-color: $white-bg;
+    width: toRem(80);
+    height: toRem(70);
+    border-radius: toRem(14);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
   }
 }
