@@ -4,12 +4,14 @@ import React, {FC, useContext, useEffect, useState} from "react";
 import BtnDefault from "../BtnDefault";
 import styles from "./styles.module.scss";
 import {BodyLayout} from "../../core/layouts/default";
+import {useRouter} from "next/router";
 
 interface PanelNavInterface {
   theme: 'light' | 'dark',
 }
 
 const PanelNav: FC<PanelNavInterface> = ({theme}) => {
+  const router = useRouter();
   const logoPath = theme === 'light' ? '/svg/logo.svg' : '/svg/logo-dark.svg';
   const bodyLayout = useContext(BodyLayout);
   const [nav, setNav] = useState<boolean>(false);
@@ -24,8 +26,9 @@ const PanelNav: FC<PanelNavInterface> = ({theme}) => {
     [styles['panel__link--dark']]: theme === 'dark',
   })
 
-  const onLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("Login")
+  const onLogin = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    // console.log("Login")
+    await router.push({query: {speaker: true}});
   }
 
   const onSignIn = (e: React.MouseEvent<HTMLButtonElement>) => {

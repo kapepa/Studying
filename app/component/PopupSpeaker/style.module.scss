@@ -18,6 +18,7 @@
     padding: toRem(90);
     border-radius: toRem(20);
     overflow: hidden;
+    margin: 0 toRem(20);
     &::before{
       content: '';
       position: absolute;
@@ -41,6 +42,7 @@
   &__video{
     border-radius: toRem(24);
     position: relative;
+    max-width: 100%;
   }
   &__dashboard{
     position: absolute;
@@ -54,6 +56,7 @@
     position: relative;
     padding: toRem(38);
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     column-gap: toRem(30);
     row-gap: toRem(30);
@@ -83,5 +86,55 @@
     border: none;
     outline: none;
     cursor: pointer;
+  }
+  &__ico{
+    //max-width: toRem(41);
+    width: 100%;
+    object-fit: none;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .popup-speaker {
+    &__window {
+      padding: toRem(70) toRem(70) 0 toRem(70);
+      margin: 0 toRem(20);
+    }
+    &__frame{
+      padding: toRem(25);
+      column-gap: toRem(20);
+      row-gap: toRem(20);
+      border-radius: toRem(20);
+    }
+    &__control{
+      width: toRem(70);
+      height: toRem(60);
+    }
+    &__dashboard{
+      position: relative;
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  .popup-speaker {
+    &__window {
+      padding: toRem(100) toRem(20) toRem(20) toRem(20);
+      margin: 0 toRem(20);
+      max-height: toRem(750);
+      //height: 100%;
+    }
+    &__base{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    &__dashboard{
+      flex: 1 1 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 toRem(15) toRem(30) toRem(15);
+    }
   }
 }
