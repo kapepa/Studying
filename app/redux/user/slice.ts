@@ -21,9 +21,7 @@ export const getKanyeQuote = createAsyncThunk('user/get', async () => {
 export const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {
-    //leave this empty
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(getKanyeQuote.pending, (state) => {
