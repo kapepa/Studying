@@ -1,12 +1,14 @@
 import React, {FC, useRef} from "react";
 import style from "./style.module.scss";
 import XClose from "../XClose";
+import {useRouter} from "next/router";
 
 const PopupSpeaker: FC = () => {
+  const router = useRouter();
   const videoRef = useRef<HTMLVideoElement>();
 
   const onCLose = (e: React.MouseEvent<HTMLDivElement | HTMLButtonElement>) => {
-
+    router.push({query: {}});
   }
 
   const onCall = (e: React.MouseEvent<HTMLButtonElement>) => {
