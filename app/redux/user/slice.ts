@@ -13,7 +13,7 @@ const initialState: userState = {
   error: false,
 };
 
-export const getKanyeQuote = createAsyncThunk('user/get', async () => {
+export const getUser = createAsyncThunk('user/get', async () => {
   const user = await axios.get('https://api.kanye.rest/');
   return user.data;
 });
@@ -24,14 +24,14 @@ export const userSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getKanyeQuote.pending, (state) => {
+      .addCase(getUser.pending, (state) => {
         state.pending = true;
       })
-      .addCase(getKanyeQuote.fulfilled, (state, { payload }) => {
+      .addCase(getUser.fulfilled, (state, { payload }) => {
         state.pending = false;
         state.profile = payload;
       })
-      .addCase(getKanyeQuote.rejected, (state) => {
+      .addCase(getUser.rejected, (state) => {
         state.pending = false;
         state.error = true;
       });
