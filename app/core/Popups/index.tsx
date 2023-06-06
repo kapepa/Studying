@@ -1,8 +1,11 @@
 import {FC, useCallback, useEffect, useMemo, useState} from "react";
 import { useRouter } from "next/router";
 import { useSearchParams } from 'next/navigation';
-
 import PopupSpeaker from "../../component/PopupSpeaker";
+import {useDispatch, useSelector} from "react-redux";
+import {getLoaderSelector} from "../../redux/local/selector";
+import {setLoaderAction} from "../../redux/local";
+import PopupAuthentication from "../../component/PopupAuthentication";
 
 interface PopupsInterface {
   speaker: boolean;
@@ -10,7 +13,9 @@ interface PopupsInterface {
 
 const Popups: FC = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
   const params = useSearchParams();
+  const getLoader = useSelector(getLoaderSelector);
   const [popups, setPopups] = useState<PopupsInterface>({
     speaker: false,
   });
@@ -32,13 +37,15 @@ const Popups: FC = () => {
     }, popups)
   }
 
+  const loaderShowHide = useCallback(() => dispatch(setLoaderAction(!getLoader)), [getLoader]);
 
   useEffect(() => {
     changeQuery(router.query)
   }, [getSpeaker, changeQuery])
 
   return <>
-    { popups.speaker && <PopupSpeaker/>}
+    { popups.speaker && <PopupSpeaker loader={getLoader} controlLoader={loaderShowHide}/> }
+    <PopupAuthentication/>
   </>
 }
 

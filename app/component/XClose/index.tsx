@@ -11,7 +11,7 @@ const XClose: FC<XCloseInterface> = ({onCd}) => {
     if (e.currentTarget.classList.contains(style['x-close'])) onCd(e)
   }
 
-  return <button onClick={onClick} className={style['x-close']} />
+  return <button onClick={onClick} className={style['x-close']} name={"close"}/>
 }
 
-export default XClose;
+export default React.memo(XClose);
