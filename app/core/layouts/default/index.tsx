@@ -1,6 +1,8 @@
 import Head from "next/head";
 import React, {FC, ReactNode, useCallback, useState} from "react"
 import Popups from "../../Popups";
+import {useSelector} from "react-redux";
+import {getLoaderSelector} from "../../../redux/local/selector";
 import Spinner from "../../../component/Spinner";
 
 interface IDefault {
@@ -12,6 +14,7 @@ const BodyLayout = React.createContext<{bodyClick: (cb: () => void) => void }>(n
 
 const Default: FC<IDefault> = ({children, title}) => {
   const [date, setDate] = useState<number>(Date.now());
+  const getLoader = useSelector(getLoaderSelector);
   const reload = useCallback((cb) => cb(), [date]);
   const bodyClick = (e: React.MouseEvent<HTMLDivElement>) => setDate(Date.now())
 
@@ -28,7 +31,7 @@ const Default: FC<IDefault> = ({children, title}) => {
         <div onClick={bodyClick} className="">{children}</div>
       </BodyLayout.Provider>
       <Popups/>
-      {/*<Spinner/>*/}
+      {getLoader && <Spinner/>}
     </>);
 }
 

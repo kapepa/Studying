@@ -1,0 +1,59 @@
+@import './../../styles/font.scss';
+@import './../../styles/variable.scss';
+@import './../../styles/mixing.scss';
+
+.popup-authentication{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($black-bg-begin, .2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__window{
+    padding: toRem(26);
+    background-color: $white-bg;
+    max-width: toRem(375);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__h{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: toRem(20);
+    line-height: toRem(24);
+    padding-bottom: toRem(24);
+    color: $black-color-def;
+    text-align: center;
+  }
+  &__toggle{
+    display: flex;
+    padding: toRem(11);
+    column-gap: toRem(11);
+    background-color: rgba($green-bg-easy, .6);
+    border-radius: toRem(33);
+    margin-bottom: toRem(50);
+  }
+  &__mode{
+    padding: toRem(8);
+    background-color: transparent;
+    flex: 1 1 50%;
+    border-radius: toRem(33);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: toRem(16);
+    line-height: toRem(22);
+    color: $white-color;
+    text-align: center;
+    transition: background-color .25s linear;
+    &--active{
+      background-color: $green-bg-easy;
+    }
+  }
+}

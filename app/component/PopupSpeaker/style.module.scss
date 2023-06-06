@@ -12,6 +12,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  &--hide{
+    opacity: 0;
+  }
   &__window{
     position: relative;
     background-color: rgba($lightslategrey-bg-def, .2);

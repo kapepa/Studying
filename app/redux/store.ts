@@ -7,9 +7,12 @@ import {
 } from '@reduxjs/toolkit';
 import { createWrapper, HYDRATE } from 'next-redux-wrapper';
 import {userReducer} from "./user";
+import {LocalReducer} from "./local";
+
 
 const combinedReducer = combineReducers({
   user: userReducer,
+  local: LocalReducer,
 });
 
 const reducer = (state: ReturnType<typeof combinedReducer>, action: AnyAction) => {

@@ -1,0 +1,38 @@
+@import './../../styles/font.scss';
+@import './../../styles/variable.scss';
+@import './../../styles/mixing.scss';
+
+.form-default{
+  display: flex;
+  flex-direction: column;
+  &__title{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: toRem(20);
+    line-height: toRem(24);
+    color: $gray-color;
+    margin-bottom: toRem(42);
+    text-align: center;
+  }
+  &__form{
+    display: flex;
+    flex-direction: column;
+  }
+  &__cell{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  &__label{
+
+  }
+  &__input{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: toRem(15);
+    line-height: toRem(22);
+    border-radius: toRem(40);
+    border: 1px solid $green-bg-easy;
+    padding: toRem(15) toRem(20);
+  }
+}
