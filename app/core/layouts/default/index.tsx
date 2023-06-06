@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React, {FC, ReactNode, useCallback, useState} from "react"
 import Popups from "../../Popups";
+import Spinner from "../../../component/Spinner";
 
 interface IDefault {
   children: ReactNode,
@@ -27,6 +28,7 @@ const Default: FC<IDefault> = ({children, title}) => {
         <div onClick={bodyClick} className="">{children}</div>
       </BodyLayout.Provider>
       <Popups/>
+      {/*<Spinner/>*/}
     </>);
 }
 

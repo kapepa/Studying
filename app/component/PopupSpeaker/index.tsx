@@ -21,7 +21,10 @@ const PopupSpeaker: FC = () => {
         <XClose onCd={onCLose}/>
       </div>
       <div className={style['popup-speaker__base']}>
-        <video ref={videoRef} src={'/video/video_preview_h264.mp4'} className={style['popup-speaker__video']} />
+        <video ref={videoRef} className={style['popup-speaker__video']} >
+          <source src={'/video/video_preview_h264.mp4'} width={960} height={540} type="video/mp4" media="(max-width:1025px)" />
+          <source src={'/video/video_preview_h264.mp4'} type="video/mp4" media="(max-width:480px)" />
+        </video>
         <div className={style['popup-speaker__dashboard']}>
           <div className={style['popup-speaker__frame']}>
             <button className={style['popup-speaker__control']}>
