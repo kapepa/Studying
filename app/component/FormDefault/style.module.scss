@@ -22,9 +22,16 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    padding-bottom: toRem(35);
   }
   &__label{
-
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: toRem(16);
+    line-height: toRem(24);
+    color: $black-color-def;
+    padding-bottom: toRem(12);
   }
   &__input{
     font-family: 'Poppins', sans-serif;
@@ -34,5 +41,41 @@
     border-radius: toRem(40);
     border: 1px solid $green-bg-easy;
     padding: toRem(15) toRem(20);
+  }
+  &__alert{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    padding-bottom: toRem(5);
+    color: $red-color-default;
+  }
+  &__basement{
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__submit{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: toRem(16);
+    line-height: toRem(24);
+    color: $white-color;
+    background-color: $green-bg-easy;
+    border-radius: toRem(36);
+    border: none;
+    outline: none;
+    padding: toRem(13);
+    width: 100%;
+    max-width: toRem(230);
+    cursor: pointer;
+    transition: background-color .25s linear, box-shadow .25s linear;
+    &:hover{
+      background-color: rgba($green-bg-easy, .8);
+    }
+    &:active{
+      box-shadow: inset 0 toRem(-2) toRem(2) 0 rgba($black-bg-begin, 0.75);
+    }
   }
 }
