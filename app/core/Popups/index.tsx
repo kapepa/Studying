@@ -1,6 +1,6 @@
 import {FC, useCallback, useEffect, useMemo, useState} from "react";
-import { useRouter } from "next/router";
-import { useSearchParams } from 'next/navigation';
+import {useRouter} from "next/router";
+import {useSearchParams} from 'next/navigation';
 import PopupSpeaker from "../../component/PopupSpeaker";
 import {useDispatch, useSelector} from "react-redux";
 import {getLoaderSelector} from "../../redux/local/selector";
