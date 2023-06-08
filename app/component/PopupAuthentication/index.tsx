@@ -2,14 +2,25 @@ import React, {FC, useState} from "react";
 import style from "./style.module.scss";
 import classNames from "classnames";
 import FormDefault from "../FormDefault";
+import {InputType} from "../../type/InputType";
 
 type typeMode = 'login' | 'register';
 
 const PopupAuthentication: FC = () => {
-  const emailRegExp: RegExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const [mode, setMode] = useState<typeMode>('login');
+  const emailRegExp: RegExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const inputPattern: {[key: string]: InputType} = {
+    email: {name: "email", type: "email", label: "Email", placeholder: "Enter your Email Address", patterns: { required: { message: "Required", value: true }, email: {pattern: {message: "Invalid email address", value: emailRegExp}} }},
+    name: {name: "name", type: "text", label: "User name", placeholder: "Enter your User name", patterns: { required: { message: "Required", value: true }, minLength: {message: 'Min length', value: 5} }},
+    password: {name: "password", type: "password", label: "Password", placeholder: "Enter your Password", patterns: { required: { message: "Required", value: true }, minLength: {message: 'Min length', value: 5} }},
+  }
   const onChangeMode = (e: React.MouseEvent<HTMLButtonElement>) => {
     setMode((e.currentTarget.name as typeMode));
+  }
+
+  const submit = (title: string, data: any) => {
+    console.log(title)
+    console.log(data)
   }
 
   return <div className={style['popup-authentication']}>
@@ -25,10 +36,8 @@ const PopupAuthentication: FC = () => {
           className={`${style['popup-authentication__mode']} ${classNames({[style['popup-authentication__mode--active']]: mode === 'register'})}`}
           name={'register'}>Register</button>
       </div>
-      <FormDefault title={"Login"} inputs={[
-        // {name: "name", type: "text", label: "User name", patterns: { required: { message: "Required", value: true }, minLength: {message: 'Min length', value: 5} }},
-        {name: "email", type: "email", label: "Email", patterns: { required: { message: "Required", value: true }, email: {pattern: {message: "Invalid email address", value: emailRegExp}} }},
-      ]}/>
+      {mode === "login" && <FormDefault cb={submit} title={"Login"} inputs={[inputPattern.name, inputPattern.password]}/>}
+      {mode === "register" && <FormDefault cb={submit} title={"Register"} inputs={[inputPattern.email, inputPattern.name, inputPattern.password]}/>}
     </div>
   </div>
 }
