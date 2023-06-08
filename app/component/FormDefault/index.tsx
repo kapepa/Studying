@@ -2,10 +2,7 @@ import {FC} from "react";
 import style from "./style.module.scss";
 import { useForm } from "react-hook-form";
 import {RegisterOptions, ValidationRule} from "react-hook-form/dist/types/validator";
-
-enum DescInputEnum {
-  text, password, email
-}
+import {InputType} from "../../type/InputType";
 
 type SinglePatternsType = {
   value?: ValidationRule<RegExp> | number | boolean,
@@ -20,35 +17,10 @@ type PatternsType = {
   [key: string]: CheckPatternsType | SinglePatternsType ,
 }
 
-type InputType = {
-  label: string,
-  name: string,
-  type: keyof typeof DescInputEnum,
-  patterns: {
-    required?: {
-      value: boolean,
-      message: string
-    },
-    minLength?: {
-      value: number,
-      message: string
-    },
-    maxLength?: {
-      value: number,
-      message: string
-    },
-    email?: {
-      pattern: {
-        value: RegExp,
-        message: string
-      }
-    }
-  }
-}
-
 interface FormDefaultInterface{
   title: string,
-  inputs: InputType[]
+  inputs: InputType[],
+  cb: (title: string, data: any) => void,
 }
 
 const patterns: PatternsType = {
@@ -66,19 +38,16 @@ const patterns: PatternsType = {
   }
 }
 
-const FormDefault: FC<FormDefaultInterface> = ({title, inputs}) => {
+const FormDefault: FC<FormDefaultInterface> = ({title, inputs, cb}) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+  const onSubmit = data => cb(title, data);
 
   const checkPattern = (pattern: string, templates: RegisterOptions): PatternsType  => {
-
-    const test = Object.keys(templates).reduce((accum, key) => {
+    return Object.keys(templates).reduce((accum, key) => {
       const hasPattern = patterns[key].hasOwnProperty('pattern');
-      return {...accum, [key]: Object.assign( hasPattern ? patterns[key].pattern : patterns[key], hasPattern ?  templates[key].pattern : templates[key]) };
+      const merge = Object.assign( patterns[key], templates[key]);
+      return {...accum, ...hasPattern ? { pattern: merge.pattern } : { [key]: merge }};
     }, {} as PatternsType)
-    console.log(test)
-
-    return test
   }
 
   return <div className={style['form-default']}>
@@ -91,9 +60,9 @@ const FormDefault: FC<FormDefaultInterface> = ({title, inputs}) => {
           id={input.name}
           type={input.type}
           name={input.name}
+          placeholder={input.placeholder}
           {...register(input.name, { ...checkPattern(input.name, input.patterns) })}
         />
-        {/*{...register(input.name, { ...checkPattern(input.name, input.patterns) })}*/}
         {errors[input.name] && <span className={style['form-default__alert']}>{ errors[input.name].message?.toString() }</span>}
       </div>))}
       <div className={style['form-default__basement']}>
