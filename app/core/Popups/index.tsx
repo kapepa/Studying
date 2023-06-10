@@ -45,7 +45,7 @@ const Popups: FC = () => {
 
   return <>
     { popups.speaker && <PopupSpeaker loader={getLoader} controlLoader={loaderShowHide}/> }
-    <PopupAuthentication/>
+    {/*<PopupAuthentication/>*/}
   </>
 }
 
