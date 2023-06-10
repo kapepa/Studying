@@ -4,13 +4,13 @@ import Default from "../../core/layouts/default/index";
 import PanelNav from "../../component/PanelNav/index";
 import styles from "./styles.module.scss";
 import Presentation from "../../section/Presentation";
-import OurSuccess from "../../section/OurSuccess/index.";
+import OurSuccess from "../../section/OurSuccess";
 import Software from "../../section/Software";
 import Platform from "../../section/Platform";
 import Features from "../../section/Features";
-import Explore from "../../section/Explore/index.";
+import Explore from "../../section/Explore";
 import Review from "../../section/Review";
-import News from "../../section/News/index.";
+import News from "../../section/News";
 import Footer from "../../section/Footer";
 
 

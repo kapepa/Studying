@@ -5,4 +5,4 @@ interface ResponsiveInterface{
   }
 }
 
-export type {ResponsiveInterface}
+export type {ResponsiveInterface};
