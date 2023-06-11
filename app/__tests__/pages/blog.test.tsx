@@ -3,6 +3,7 @@ import { render, screen } from "@testing-library/react";
 import Blog from "../../pages/blog";
 import React from "react";
 import PanelNav from "../../component/PanelNav";
+import Learning from "../../section/Learning";
 
 jest.mock("../../core/layouts/default", () => jest.fn(({children}) => {return <div>{children}</div>}));
 jest.mock("../../component/PanelNav", () => jest.fn(() => "PanelNav"));
@@ -14,6 +15,7 @@ jest.mock("../../section/Footer", () => jest.fn(() => "Footer"));
 
 describe("Blog", () => {
   it("renders a Blog", () => {
+    const nav = jest.fn()
     const { getByTestId, debug } = render(<Blog />);
 
     expect(screen.getByText(/PanelNav/i)).toBeInTheDocument();
@@ -23,6 +25,7 @@ describe("Blog", () => {
     expect(screen.getByText(/Marketing/i)).toBeInTheDocument();
     expect(screen.getByText(/Footer/i)).toBeInTheDocument();
 
-    expect(PanelNav).toHaveBeenCalled()
+    expect(PanelNav).toHaveBeenCalled();
+    expect(Learning).toHaveBeenCalled()
   });
 });
