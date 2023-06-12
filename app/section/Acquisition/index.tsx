@@ -16,7 +16,7 @@ interface RadioPaymentInterface{
 
 const Acquisition: FC = () => {
   const [payment, setPayment] = useState<PaymentInterface>({ name: "paypal", number: null, date: undefined, cvc: null })
-  const { register, control, handleSubmit, formState: { errors } } = useForm<PaymentInterface>({
+  const { register, reset, handleSubmit, formState: { errors } } = useForm<PaymentInterface>({
     defaultValues: { name: "paypal", number: null, date: undefined, cvc: null  }
   });
 
@@ -42,7 +42,10 @@ const Acquisition: FC = () => {
 
   const changePayment = (e: React.ChangeEvent<HTMLInputElement>) => setPayment({...payment, name: e.currentTarget.value as nameType});
 
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = async (data, e: React.FormEvent<HTMLFormElement>) => {
+    reset();
+    (e.target as HTMLFormElement).reset();
+  }
 
   const RadioPayment: FC<RadioPaymentInterface> = ({src, value, name, change, checked}) => {
     const refInput = useRef<HTMLInputElement>()
@@ -50,7 +53,7 @@ const Acquisition: FC = () => {
     const onClickPay = (e: React.MouseEvent<HTMLDivElement>) => refInput.current.click();
 
     return <div onClick={onClickPay} className={`${style['radio-pay']}`}>
-      <img className={`${style['radio-pay__image']} ${checkedClass}`} src={src} alt={"payment"} />
+      <img className={`${style['radio-pay__image']} ${checkedClass}`} src={src} alt={value} />
       <input
         className={`${style['radio-pay__input']}`}
         onChange={change}
@@ -64,7 +67,7 @@ const Acquisition: FC = () => {
   }
 
   return <section className={style.acquisition}>
-    <form className={style.acquisition__form} onSubmit={handleSubmit(onSubmit)}>
+    <form role="form" className={style.acquisition__form} onSubmit={handleSubmit(onSubmit)}>
       <h5 className={style.acquisition__h}>Checkout</h5>
       <span className={style.acquisition__subtitle}>Cart Type</span>
       <div className={style['acquisition__payment-way']}>
