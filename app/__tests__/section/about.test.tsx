@@ -1,7 +1,6 @@
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import About from "../../section/About";
-import BtnDefault from "../../component/BtnDefault";
 
 jest.mock("../../component/BtnDefault",() => jest.fn(({click, text}) => {
   return <button onClick={click} data-testid="mock-button">{text}</button>
@@ -9,10 +8,10 @@ jest.mock("../../component/BtnDefault",() => jest.fn(({click, text}) => {
 
 describe("About", () => {
   it("should be render About section", () => {
-    const { getByTestId } = render(<About />);
-    // const mockBtn = getByTestId("mock-button");
+    const { container } = render(<About />);
+    const button = container.querySelector('button');
 
+    fireEvent.click(button)
     expect(screen.getByText("Know about learning learning platform")).toBeInTheDocument();
-
   })
 })
