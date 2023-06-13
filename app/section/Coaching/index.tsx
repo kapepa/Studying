@@ -29,11 +29,11 @@ const Coaching: FC = () => {
     <div className={style.coaching__accordion}>
 
       <div className={style.coaching__cell}>
-        <div className={style.coaching__cap} onClick={clickOpenClose}>
+        <div className={style.coaching__cap} onClick={clickOpenClose} role="cell-accordion-click">
           <span className={style.coaching__subject}>Lorem ipsum dolor sit amet</span>
           <div className={style.coaching__arrow}/>
         </div>
-        <div className={style.coaching__stretch}>
+        <div className={style.coaching__stretch} role="cell-accordion-open">
           <span className={style.coaching__more}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempos Lorem ipsum dolor sitamet, consectetur adipiscing elit, sed do eiusmod temporLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempos Lorem ipsum dolor sitamet, consectetur adipiscing elit, sed do eiusmod temporLorem ipsum dolor sit amet</span>
         </div>
       </div>

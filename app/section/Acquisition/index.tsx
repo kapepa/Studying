@@ -5,6 +5,7 @@ import BtnDefault from "../../component/BtnDefault";
 import classNames from "classnames";
 import {nameType, PaymentInterface} from "../../interface/PaymentInterface";
 import InputDefault from "../../component/InputDefault";
+import axios from "axios";
 
 interface RadioPaymentInterface{
   value: string,
@@ -43,8 +44,14 @@ const Acquisition: FC = () => {
   const changePayment = (e: React.ChangeEvent<HTMLInputElement>) => setPayment({...payment, name: e.currentTarget.value as nameType});
 
   const onSubmit = async (data, e: React.FormEvent<HTMLFormElement>) => {
-    reset();
-    (e.target as HTMLFormElement).reset();
+    try {
+      await axios.post('https://jsonplaceholder.typicode.com/posts', {   headers: { 'Content-type': 'application/json; charset=UTF-8' } }).then(() => {
+        reset();
+        (e.target as HTMLFormElement).reset();
+      });
+    } catch (e) {
+      console.error('Something went to wrong!')
+    }
   }
 
   const RadioPayment: FC<RadioPaymentInterface> = ({src, value, name, change, checked}) => {

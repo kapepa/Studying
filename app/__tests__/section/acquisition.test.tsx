@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom";
 import {render, screen, fireEvent} from "@testing-library/react";
 import Acquisition from "../../section/Acquisition";
+import axios, { AxiosResponse } from "axios";
 
 jest.mock("../../component/InputDefault", () => jest.fn(({ id, type, title, isChange }) => {
   return <div>
@@ -9,12 +10,14 @@ jest.mock("../../component/InputDefault", () => jest.fn(({ id, type, title, isCh
   </div>
 }));
 
+jest.mock("axios", () => ({post: jest.fn()}));
+
 describe("Acquisition", () => {
-  beforeEach(() => {
-    render(<Acquisition/>);
+  beforeEach(async () => {
+    render(<Acquisition/>)
   })
 
-  it("should be render Acquisition", async () => {
+  it("should be render Acquisition", () => {
     expect(screen.getByText(/Checkout/i)).toBeInTheDocument();
   })
 
@@ -37,12 +40,15 @@ describe("Acquisition", () => {
       expect(screen.findByText('123'));
     })
 
-    it('should be submit of form', () => {
+    it('should be submit of form', async () => {
+      const post = jest.spyOn(axios, "post").mockImplementationOnce(() => Promise.resolve());
       fireEvent.submit(screen.getByRole('form'))
 
-      expect(screen.findByText(''));
-      expect(screen.findByText(''));
-      expect(screen.findByText(''));
+      await expect(screen.findByText(''));
+      await expect(screen.findByText(''));
+      await expect(screen.findByText(''));
+
+      expect(post).toHaveBeenCalledTimes(1);
     })
   })
 })
