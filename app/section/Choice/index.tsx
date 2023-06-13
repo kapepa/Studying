@@ -8,7 +8,7 @@ const Choice: FC = () => {
 
       <div className={style.choice__cell}>
         <div className={`${style.choice__square} ${style['choice__square--green']}`}>
-          <img src={'/svg/brush.svg'} className={style.choice__ico}/>
+          <img src={'/svg/brush.svg'} alt={'brush'} className={style.choice__ico}/>
         </div>
         <h5 className={style.choice__h}>Design</h5>
         <span className={style.choice__span}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod</span>
@@ -16,7 +16,7 @@ const Choice: FC = () => {
 
       <div className={style.choice__cell}>
         <div className={`${style.choice__square} ${style['choice__square--blue']}`}>
-          <img src={'/svg/desktop.svg'} className={style.choice__ico}/>
+          <img src={'/svg/desktop.svg'} alt={'desktop'} className={style.choice__ico}/>
         </div>
         <h5 className={style.choice__h}>Development</h5>
         <span className={style.choice__span}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod</span>
@@ -24,7 +24,7 @@ const Choice: FC = () => {
 
       <div className={style.choice__cell}>
         <div className={`${style.choice__square} ${style['choice__square--lightblue']}`}>
-          <img src={'/svg/storage.svg'} className={style.choice__ico}/>
+          <img src={'/svg/storage.svg'} alt={'storage'} className={style.choice__ico}/>
         </div>
         <h5 className={style.choice__h}>Development</h5>
         <span className={style.choice__span}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod</span>
@@ -32,7 +32,7 @@ const Choice: FC = () => {
 
       <div className={style.choice__cell}>
         <div className={`${style.choice__square} ${style['choice__square--lightgreen']}`}>
-          <img src={'/svg/briefcase.svg'} className={style.choice__ico}/>
+          <img src={'/svg/briefcase.svg'} alt={'briefcase'} className={style.choice__ico}/>
         </div>
         <h5 className={style.choice__h}>Business</h5>
         <span className={style.choice__span}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod</span>
@@ -40,7 +40,7 @@ const Choice: FC = () => {
 
       <div className={style.choice__cell}>
         <div className={`${style.choice__square} ${style['choice__square--yellow']}`}>
-          <img src={'/svg/market.svg'} className={style.choice__ico}/>
+          <img src={'/svg/market.svg'} alt={'market'} className={style.choice__ico}/>
         </div>
         <h5 className={style.choice__h}>Marketing</h5>
         <span className={style.choice__span}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod</span>
@@ -48,7 +48,7 @@ const Choice: FC = () => {
 
       <div className={style.choice__cell}>
         <div className={`${style.choice__square} ${style['choice__square--red']}`}>
-          <img src={'/svg/book.svg'} className={style.choice__ico}/>
+          <img src={'/svg/book.svg'} alt={'book'} className={style.choice__ico}/>
         </div>
         <h5 className={style.choice__h}>Photography</h5>
         <span className={style.choice__span}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod</span>
@@ -56,7 +56,7 @@ const Choice: FC = () => {
 
       <div className={style.choice__cell}>
         <div className={`${style.choice__square} ${style['choice__square--black']}`}>
-          <img src={'/svg/movie.svg'} className={style.choice__ico}/>
+          <img src={'/svg/movie.svg'} alt={'movie'} className={style.choice__ico}/>
         </div>
         <h5 className={style.choice__h}>Acting</h5>
         <span className={style.choice__span}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod</span>
@@ -64,7 +64,7 @@ const Choice: FC = () => {
 
       <div className={style.choice__cell}>
         <div className={`${style.choice__square} ${style['choice__square--lightgreen']}`}>
-          <img src={'/svg/briefcase.svg'} className={style.choice__ico}/>
+          <img src={'/svg/briefcase.svg'} alt={'briefcase'} className={style.choice__ico}/>
         </div>
         <h5 className={style.choice__h}>Business</h5>
         <span className={style.choice__span}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod</span>

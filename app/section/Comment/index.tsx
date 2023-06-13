@@ -38,22 +38,22 @@ const Comment: FC = () => {
       <div className={style.comment__community}>
         <div>
           <Link className={style.comment__people} href={"/"}>
-            <img className={style.comment__face} src={"/image/community_people_three.png"} />
+            <img className={style.comment__face} src={"/image/community_people_three.png"} alt={"people face"}/>
           </Link>
         </div>
         <div>
           <Link className={style.comment__people} href={"/"}>
-            <img className={style.comment__face} src={"/image/community_people_five.png"} />
+            <img className={style.comment__face} src={"/image/community_people_five.png"} alt={"people face"}/>
           </Link>
         </div>
         <div>
           <Link className={style.comment__people} href={"/"}>
-            <img className={style.comment__face} src={"/image/community_people_two.png"} />
+            <img className={style.comment__face} src={"/image/community_people_two.png"} alt={"people face"}/>
           </Link>
         </div>
         <div>
           <Link className={style.comment__people} href={"/"}>
-            <img className={style.comment__face} src={"/image/community_people_four.png"} />
+            <img className={style.comment__face} src={"/image/community_people_four.png"} alt={"people face"}/>
           </Link>
         </div>
       </div>
