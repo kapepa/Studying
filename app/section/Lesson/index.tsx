@@ -17,9 +17,10 @@ const Lesson: FC = () => {
 
   return <section className={style.lesson}>
     <h3 className='h-bold'>Welcome back, ready for your next lesson?</h3>
-    <div className={style.lesson__slider}>
 
+    <div className={style.lesson__slider}>
       <SliderDefault slidesToShow={3} responsive={responsive}>
+
         <div className={style.lesson__frame}>
           <div className={style.lesson__card}>
             <img className={style.lesson__picture} src={'/image/conversation.png'} alt={'picture'} />
@@ -79,9 +80,10 @@ const Lesson: FC = () => {
             <span className={style.lesson__page}>Lesson 5 of 7</span>
           </div>
         </div>
-      </SliderDefault>
 
+      </SliderDefault>
     </div>
+
   </section>
 }
 
