@@ -29,7 +29,7 @@ describe("Home", () => {
   it("renders a Home", () => {
     const { debug } = render(
       <Provider store={store}>
-        <Home />
+        <Home news={[]} />
       </Provider>
     );
     expect(screen.getByText(/PanelNav/i)).toBeInTheDocument();

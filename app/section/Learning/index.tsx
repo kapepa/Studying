@@ -2,9 +2,9 @@ import React, {FC} from "react";
 import style from "./style.module.scss";
 import BtnDefault from "../../component/BtnDefault";
 
-const Learning: FC<any> = () => {
+const Learning: FC <any> = () => {
   const clickStart = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log('clickStart')
+    // console.log('clickStart')
   }
 
   return <section className={style.learning}>
@@ -17,7 +17,7 @@ const Learning: FC<any> = () => {
       </div>
     </div>
     <div className={style.learning__additional}>
-      <img className={style.learning__images} src={'/image/notebook.png'} alt={'img name'}/>
+      <img className={style.learning__images} src={'/image/notebook.png'} alt={'notebook'}/>
     </div>
   </section>
 };

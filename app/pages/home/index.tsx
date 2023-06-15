@@ -12,9 +12,13 @@ import Explore from "../../section/Explore";
 import Review from "../../section/Review";
 import News from "../../section/News";
 import Footer from "../../section/Footer";
+import {NewsInterface} from "../../interface/NewsInterface";
 
+interface HomeInterface {
+  news: NewsInterface[]
+}
 
-const Home: NextPage = () => {
+const Home: NextPage<HomeInterface> = ({news}) => {
   return (
     <Default title="Home">
       <div className={styles.home}>
@@ -54,7 +58,7 @@ const Home: NextPage = () => {
           <Review />
         </div>
         <div className="container">
-          <News />
+          <News main={news[0]} list={news.slice(1)}/>
         </div>
         <div className={styles['home__footer']}>
           <div className="container">
@@ -66,11 +70,39 @@ const Home: NextPage = () => {
   );
 }
 
-export async function getServerSideProps(context: GetServerSideProps) {
-  return {
-    props: {},
-  };
-}
+export const getServerSideProps: GetServerSideProps<HomeInterface> = async () => {
+  const news: NewsInterface[] = [
+    {
+      id: `${Math.random() * 1000}`,
+      img: "/image/news-one.png",
+      type: "news",
+      title: "Class adds $30 million to its balance sheet for a Zoom-friendly edtech solution",
+      desc: "Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively. Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively",
+    },
+    {
+      id: `${Math.random() * 1000}`,
+      img: "/image/news-two.png",
+      type: "press release",
+      title: "Zoom’s earliest investors are betting millions on a better Zoom for schools",
+      desc: "Zoom was never created to be a consumer product. Nonetheless, the created to be a consumer product",
+    },
+    {
+      id: `${Math.random() * 1000}`,
+      img: "/image/news-three.png",
+      type: "news",
+      title: "Class Technologies Inc. Closes $30 Million Series A Financing to Meet High Demand",
+      desc: "Class Technologies Inc., the company that created Class, the created to be a consumer product",
+    },
+    {
+      id: `${Math.random() * 1000}`,
+      img: "/image/news-four.png",
+      type: "news",
+      title: "Former Blackboard CEO Raises $16M to Bring LMS Features to Zoom Classrooms",
+      desc: "This year, investors have reaped big financial returns from betting on Zoom",
+    },
+  ]
 
+  return { props: { news: news } }
+}
 
 export default Home;
