@@ -4,15 +4,15 @@ import BtnDefault from "../../component/BtnDefault";
 
 const Features: FC = () => {
   const clickPresent = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log('clickPresent')
+    // console.log('clickPresent')
   }
 
   const clickCall = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log('clickPresent')
+    // console.log('clickPresent')
   }
 
   const clickFeatures = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log('clickFeatures')
+    // console.log('clickFeatures')
   }
 
   return <section className={style.features}>

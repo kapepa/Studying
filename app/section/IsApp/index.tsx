@@ -16,7 +16,7 @@ const IsApp: FC = () => {
     <div className={style['is-app__basic']}>
 
       <div className={style['is-app__card']}>
-        <img src={'/image/notebook.png'} className={style['is-app__picture']} alt={'picture'} />
+        <img src={'/image/notebook.png'} className={style['is-app__picture']} alt={'teacher'} />
         <h5 className={style['is-app__title']}>Become a Teacher</h5>
         <span className={style['is-app__more']}>Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...</span>
         <div className={style['is-app__basement']}>
@@ -25,7 +25,7 @@ const IsApp: FC = () => {
       </div>
 
       <div className={style['is-app__card']}>
-        <img src={'/image/notebook.png'} className={style['is-app__picture']} alt={'picture'} />
+        <img src={'/image/notebook.png'} className={style['is-app__picture']} alt={'teacher'} />
         <h5 className={style['is-app__title']}>Become a Teacher</h5>
         <span className={style['is-app__more']}>Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...</span>
         <div className={style['is-app__basement']}>
