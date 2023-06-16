@@ -28,7 +28,7 @@ const News: FC<NewsFace> = ({ main,list}) => {
         <h5 className={style.newspaper__h}>{cropText(main.title)}</h5>
         <span className={style.newspaper__span}>{cropText(main.desc)}</span>
         <div className={style.newspaper__basement}>
-          <Link href={`/course/${main.id}`}  onClick={(e) => {e.stopPropagation()}} className={style.newspaper__link}>Read more</Link>
+          <Link href={`/course/${main.id}`}  onClick={(e) => {e.stopPropagation()}} className={style.newspaper__link} >Read more</Link>
           <div/>
         </div>
       </div>
