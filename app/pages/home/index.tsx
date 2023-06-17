@@ -13,12 +13,14 @@ import Review from "../../section/Review";
 import News from "../../section/News";
 import Footer from "../../section/Footer";
 import {NewsInterface} from "../../interface/NewsInterface";
+import {AchievementInterface} from "../../interface/AchievementInterface";
 
 interface HomeInterface {
-  news: NewsInterface[]
+  news: NewsInterface[],
+  achievement: AchievementInterface,
 }
 
-const Home: NextPage<HomeInterface> = ({news}) => {
+const Home: NextPage<HomeInterface> = ({news, achievement}) => {
   return (
     <Default title="Home">
       <div className={styles.home}>
@@ -38,7 +40,7 @@ const Home: NextPage<HomeInterface> = ({news}) => {
       </div>
       <main className={styles.home__main}>
         <div className="container">
-          <OurSuccess/>
+          <OurSuccess achievement={achievement}/>
         </div>
         <div className="container">
           <Software/>
@@ -101,8 +103,9 @@ export const getServerSideProps: GetServerSideProps<HomeInterface> = async () =>
       desc: "This year, investors have reaped big financial returns from betting on Zoom",
     },
   ]
+  const achievement: AchievementInterface = {students: 15500, success: 75, questions: 35, experts: 26, experience: 16};
 
-  return { props: { news: news } }
+  return { props: { news: news, achievement: achievement } }
 }
 
 export default Home;
