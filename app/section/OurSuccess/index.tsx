@@ -1,15 +1,12 @@
 import {FC, useState} from "react";
 import style from "./style.module.scss";
+import {AchievementInterface} from "../../interface/AchievementInterface";
 
-interface AchievementInterface {
-  students: number,
-  success: number,
-  questions: number,
-  experts: number,
-  experience: number,
+interface OurSuccessInterface {
+  achievement: AchievementInterface;
 }
 
-const OurSuccess: FC = () => {
+const OurSuccess: FC<OurSuccessInterface> = ({achievement}) => {
   const [state, setState] = useState<AchievementInterface>({students: 15500, success: 75, questions: 35, experts: 26, experience: 16});
 
   const shortDigit = (n: number): string => {
