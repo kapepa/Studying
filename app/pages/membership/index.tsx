@@ -1,4 +1,4 @@
-import {NextPage} from "next";
+import {GetServerSideProps, NextPage} from "next";
 import Default from "../../core/layouts/default";
 import styles from "./styles.module.scss";
 import PanelNav from "../../component/PanelNav";
@@ -9,13 +9,18 @@ import Coaching from "../../section/Coaching";
 import Students from "../../section/Students";
 import IsApp from "../../section/IsApp";
 import Footer from "../../section/Footer";
+import {PricingInterface} from "../../interface/PricingInterface";
 
-const Membership: NextPage = () => {
+interface MembershipPage {
+  pricing: PricingInterface[],
+}
+
+const Membership: NextPage<MembershipPage> = ({pricing}) => {
   return <Default title={'Membership'}>
     <main className={styles.membership}>
       <PanelNav theme={'dark'}/>
       <header className='container'>
-        <Pricing />
+        <Pricing pricing={pricing}/>
       </header>
       <div className='container'>
         <Online />
@@ -38,6 +43,36 @@ const Membership: NextPage = () => {
       </div>
     </main>
   </Default>
+}
+
+export const getServerSideProps: GetServerSideProps<MembershipPage> = async () => {
+  const pricing: PricingInterface[] = [
+    {
+      type: "like",
+      subtitle: "",
+      term: "forever",
+      price: 0,
+      capability: ["Components-driven system", "Sales-boosting landing pages", "Awesome Feather icons pack"],
+      detailed: "Try for free",
+    },
+    {
+      type: "individual",
+      subtitle: "best!",
+      term: "month",
+      price: 24,
+      capability: ["Components-driven system", "Sales-boosting landing pages", "Awesome Feather icons pack", "Themed into 3 different styles", "Will help to learn Figma"],
+      detailed: "Regular license",
+    },
+    {
+      type: "corporate",
+      subtitle: "",
+      term: "editor",
+      price: 24,
+      capability: ["Components-driven system", "Sales-boosting landing pages", "Awesome Feather icons pack", "Themed into 3 different styles"],
+      detailed: "Regular license",
+    }
+  ]
+  return { props: { pricing } }
 }
 
 export default Membership;

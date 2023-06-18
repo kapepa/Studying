@@ -43,6 +43,7 @@
     font-size: toRem(18);
     line-height: toRem(32);
     color: $green-color-easy;
+    text-transform: capitalize;
   }
   &__clue{
     border: 1px solid $purple-color-def;

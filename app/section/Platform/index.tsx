@@ -5,15 +5,15 @@ import BtnPlay from "../../component/BtnPlay";
 
 const Platform: FC = () => {
   const clickInstruction = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log('Instruction')
+    // console.log('Instruction')
   }
 
   const clickStudents = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log('Students')
+    // console.log('Students')
   }
 
   const clickVideo = (bool: boolean) => {
-    console.log('clickVideo', bool)
+    // console.log('clickVideo', bool)
   }
 
   return <section className={style.platform}>
