@@ -5,11 +5,11 @@ import BtnPlay from "../../component/BtnPlay";
 
 const Presentation: FC = () => {
   const clickJoinBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log('join')
+    // console.log('join')
   }
 
   const clickPlay = (b: boolean) => {
-    console.log(b)
+    // console.log(b)
   }
 
   const clickJoin = (e: React.MouseEvent<HTMLButtonElement>) => {
