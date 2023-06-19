@@ -34,7 +34,8 @@ const Recommended: FC<RecommendedInterface> = ({slides}) => {
     <div className={style.recommended__slider}>
       <SliderDefault slidesToShow={4} responsive={responsive}>
         { sliders.map((slides: SlideInterface, index: number) => (
-          <div key={`${slides.date}-${index}`} className={style['rec-slide__frame']}>
+
+          <div key={`${slides.date}-${index}`} className={style['rec-slide__frame']} role="slide">
             <div className={style['rec-slide']}>
               <img className={style['rec-slide__picture']} src={slides.images[0]}  alt='images'/>
               <div className={style['rec-slide__detailed']}>
@@ -61,6 +62,7 @@ const Recommended: FC<RecommendedInterface> = ({slides}) => {
               </div>
             </div>
           </div>
+
         )) }
       </SliderDefault>
     </div>
