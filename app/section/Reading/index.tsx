@@ -1,44 +1,29 @@
 import React, {FC} from "react";
 import style from "./style.module.scss";
 import BtnDefault from "../../component/BtnDefault";
+import {TechnologyInterface} from "../../interface/TechnologyInterface";
 
-const Reading: FC = () => {
+interface ReadingFC {
+  technology: TechnologyInterface[];
+}
+
+const Reading: FC<ReadingFC> = ({ technology }) => {
   const clickTechnology = (technology: string) => {
-    console.log(technology);
-
+    // console.log(technology);
   }
 
   return <section className={style.reading}>
     <h4 className="h-bold">Reading blog list</h4>
     <div className={style.reading__list}>
 
-      <div className={style.reading__technology}>
-        <img className={style.reading__images} src={"/image/ux-ui.png"} alt="ux/ui"/>
-        <div className={style.reading__action}>
-          <BtnDefault text={"UX/UI"} click={() => {clickTechnology("UX/UI")}} shape={'rounding'}/>
+      { technology.map(( tech: TechnologyInterface, index: number) => (
+        <div className={style.reading__technology} key={`${tech.name}-${index}`} role="tech">
+          <img className={style.reading__images} src={`/image/${tech.img}`} alt="ux/ui"/>
+          <div className={style.reading__action}>
+            <BtnDefault text={tech.name} click={() => {clickTechnology(tech.name)}} shape={'rounding'}/>
+          </div>
         </div>
-      </div>
-
-      <div className={style.reading__technology}>
-        <img className={style.reading__images} src={"/image/react.png"} alt="ux/ui"/>
-        <div className={style.reading__action}>
-          <BtnDefault text={"React"} click={() => {clickTechnology("React")}} shape={'rounding'}/>
-        </div>
-      </div>
-
-      <div className={style.reading__technology}>
-        <img className={style.reading__images} src={"/image/php.png"} alt="ux/ui"/>
-        <div className={style.reading__action}>
-          <BtnDefault text={"PHP"} click={() => {clickTechnology("PHP")}} shape={'rounding'}/>
-        </div>
-      </div>
-
-      <div className={style.reading__technology}>
-        <img className={style.reading__images} src={"/image/javascript.png"} alt="ux/ui"/>
-        <div className={style.reading__action}>
-          <BtnDefault text={"JavaScript"} click={() => {clickTechnology("javascript")}} shape={'rounding'}/>
-        </div>
-      </div>
+      )) }
 
     </div>
   </section>

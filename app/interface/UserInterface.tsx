@@ -3,4 +3,4 @@ interface UserInterface {
   avatar: string,
 }
 
-export type {UserInterface}
+export type { UserInterface };

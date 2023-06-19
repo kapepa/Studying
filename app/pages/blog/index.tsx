@@ -9,12 +9,14 @@ import Related from "../../section/Related";
 import Marketing from "../../section/Marketing";
 import Footer from "../../section/Footer";
 import {OffersInterface} from "../../interface/OffersInterface";
+import {TechnologyInterface} from "../../interface/TechnologyInterface";
 
 interface InterfaceBlog {
   offers: OffersInterface[],
+  technology: TechnologyInterface[]
 }
 
-const Blog: NextPage<InterfaceBlog> = ({offers}) => {
+const Blog: NextPage<InterfaceBlog> = ({offers, technology}) => {
   return <Default title={'Blog'} >
     <main className={style.blog}>
       <PanelNav theme={'dark'}/>
@@ -24,7 +26,7 @@ const Blog: NextPage<InterfaceBlog> = ({offers}) => {
         </div>
       </header>
       <div className='container'>
-        <Reading/>
+        <Reading technology={technology}/>
       </div>
       <div className={`${style.blog__related}`}>
         <div className='container'>
@@ -97,9 +99,15 @@ export const getServerSideProps: GetServerSideProps<InterfaceBlog> = async () =>
         avatar: "/image/avatar.png"
       }
     },
+  ];
+  const technology: TechnologyInterface[] = [
+    {img: "ux-ui.png", name: "UX/UI"},
+    {img: "react.png", name: "React"},
+    {img: "php.png", name: "PHP"},
+    {img: "javascript.png", name: "JavaScript"},
   ]
 
-  return { props: { offers: offers } }
+  return { props: { offers, technology } }
 }
 
 
