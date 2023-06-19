@@ -1,4 +1,4 @@
-import {NextPage} from "next";
+import {GetServerSideProps, NextPage} from "next";
 import styles from "./styles.module.scss";
 import Default from "../../core/layouts/default";
 import PanelNav from "../../component/PanelNav";
@@ -8,8 +8,13 @@ import About from "../../section/About";
 import Real from "../../section/Real";
 import Comment from "../../section/Comment";
 import Footer from "../../section/Footer";
+import {RealInterface} from "../../interface/RealInterface";
 
-const Search: NextPage = () => {
+interface SearchPage {
+  real: RealInterface[]
+}
+
+const Search: NextPage<SearchPage> = ({real}) => {
   return <Default title={'Search'}>
     <div className={styles.search}>
       <PanelNav theme={'dark'}/>
@@ -18,7 +23,7 @@ const Search: NextPage = () => {
         <About/>
       </div>
       <div className="container">
-        <Real/>
+        <Real real={real} />
       </div>
       <div className='lightblue'>
         <div className="container">
@@ -32,6 +37,36 @@ const Search: NextPage = () => {
       </div>
     </div>
   </Default>
+}
+
+export const getServerSideProps: GetServerSideProps<SearchPage> = async () => {
+  const real: RealInterface[] = [
+    {
+      text: "Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor, consectetur adipising elit.",
+      user: { name: "Jane", avatar: "community_people_five.png" },
+    },
+    {
+      text: "Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor, consectetur adipising elit. Lorem ipsum dolor sit amet",
+      user: { name: "Adam", avatar: "community_people_three.png" },
+    },
+    {
+      text: "Consectetur adipising elit, consectetur adipising elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet",
+      user: { name: "Tomara", avatar: "community_people_two.png" },
+    },
+    {
+      text: "Consectetur adipising elit, consectetur adipising elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet",
+      user: { name: "Jane", avatar: "community_people_five.png" },
+    },
+    {
+      text: "Consectetur adipising elit, consectetur adipising elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet",
+      user: { name: "Adam", avatar: "community_people_three.png" },
+    },
+    {
+      text: "Consectetur adipising elit, consectetur adipising elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet",
+      user: { name: "Tomara", avatar: "community_people_two.png" },
+    },
+  ]
+  return { props: { real } }
 }
 
 export default Search;
