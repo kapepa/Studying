@@ -1,11 +1,23 @@
 import React, {FC, useCallback, useState} from "react";
 import style from "./style.module.scss";
 import InputSearch from "../../component/InputSearch";
+import axios from "axios";
 
 const Scan: FC = () => {
-  let [search, setSearch] = useState<string>()
-  const clickSubject = (e: React.MouseEvent<HTMLDivElement>) => {
-    setSearch(e.currentTarget.dataset['search'])
+  let [search, setSearch] = useState<string>();
+
+  const clickSubject = async (e: React.MouseEvent<HTMLDivElement>) => {
+    try {
+      const search: string = e.target['dataset']['search'];
+      await axios.get('https://jsonplaceholder.typicode.com/posts/1');
+      setSearch(search);
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  const onChange = (search: string) => {
+
   }
 
   const toSearch = useCallback(() => {
@@ -21,7 +33,7 @@ const Scan: FC = () => {
     </picture>
     <div className="container">
       <div className={style.scan__area}>
-        <InputSearch cd={(search: string) => console.log(search)} toSearch={toSearch()}/>
+        <InputSearch cd={onChange} toSearch={toSearch()}/>
         <div className={style['scan__find-list']}>
           <div onClick={clickSubject} className={style['scan__find-cell']} data-search={'subject'}>Subject</div>
           <div onClick={clickSubject} className={style['scan__find-cell']} data-search={'partner'}>Partner</div>

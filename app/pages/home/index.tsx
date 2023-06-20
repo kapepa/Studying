@@ -14,13 +14,15 @@ import News from "../../section/News";
 import Footer from "../../section/Footer";
 import {NewsInterface} from "../../interface/NewsInterface";
 import {AchievementInterface} from "../../interface/AchievementInterface";
+import {SoftwareInterface} from "../../interface/SoftwareInterface";
 
 interface HomeInterface {
   news: NewsInterface[],
+  software: SoftwareInterface[],
   achievement: AchievementInterface,
 }
 
-const Home: NextPage<HomeInterface> = ({news, achievement}) => {
+const Home: NextPage<HomeInterface> = ({news, achievement, software}) => {
   return (
     <Default title="Home">
       <div className={styles.home}>
@@ -43,7 +45,7 @@ const Home: NextPage<HomeInterface> = ({news, achievement}) => {
           <OurSuccess achievement={achievement}/>
         </div>
         <div className="container">
-          <Software/>
+          <Software software={software}/>
         </div>
         <div className="container">
           <Platform/>
@@ -102,10 +104,27 @@ export const getServerSideProps: GetServerSideProps<HomeInterface> = async () =>
       title: "Former Blackboard CEO Raises $16M to Bring LMS Features to Zoom Classrooms",
       desc: "This year, investors have reaped big financial returns from betting on Zoom",
     },
+  ];
+  const software: SoftwareInterface[] = [
+    {
+      img: "doc.svg",
+      title: "Online Billing, Invoicing, & Contracts",
+      text: "Simple and secure control of your organization’s financial and legal transactions. Send customized invoices and contracts, financial and legal",
+    },
+    {
+      img: "date.svg",
+      title: "Easy Scheduling & Attendance Tracking",
+      text: "Schedule and reserve classrooms at one campus or multiple campuses. Keep detailed records of student attendance.",
+    },
+    {
+      img: "community.svg",
+      title: "Customer Tracking",
+      text: "Automate and track emails to individuals or groups. Skilline’s built-in system helps organize your organization.",
+    },
   ]
   const achievement: AchievementInterface = {students: 15500, success: 75, questions: 35, experts: 26, experience: 16};
 
-  return { props: { news: news, achievement: achievement } }
+  return { props: { news: news, achievement: achievement, software } }
 }
 
 export default Home;

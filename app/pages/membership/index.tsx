@@ -10,12 +10,14 @@ import Students from "../../section/Students";
 import IsApp from "../../section/IsApp";
 import Footer from "../../section/Footer";
 import {PricingInterface} from "../../interface/PricingInterface";
+import {StudentInterface} from "../../interface/StudentInterface";
 
 interface MembershipPage {
   pricing: PricingInterface[],
+  students: StudentInterface[],
 }
 
-const Membership: NextPage<MembershipPage> = ({pricing}) => {
+const Membership: NextPage<MembershipPage> = ({pricing, students}) => {
   return <Default title={'Membership'}>
     <main className={styles.membership}>
       <PanelNav theme={'dark'}/>
@@ -30,7 +32,7 @@ const Membership: NextPage<MembershipPage> = ({pricing}) => {
       </div>
       <div className={styles['membership__bg-gray']}>
         <div className='container'>
-          <Students />
+          <Students students={students}/>
         </div>
       </div>
       <div className='container'>
@@ -71,8 +73,14 @@ export const getServerSideProps: GetServerSideProps<MembershipPage> = async () =
       capability: ["Components-driven system", "Sales-boosting landing pages", "Awesome Feather icons pack", "Themed into 3 different styles"],
       detailed: "Regular license",
     }
+  ];
+  const students: StudentInterface[] = [
+    {
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod",
+      user: {name: "Simons", avatar: "avatar.png"},
+    }
   ]
-  return { props: { pricing } }
+  return { props: { pricing, students: Array(6).fill(students[0]) } }
 }
 
 export default Membership;
