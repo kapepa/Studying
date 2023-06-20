@@ -1,7 +1,16 @@
 import {FC} from "react";
 import style from "./style.module.scss";
+import {SoftwareInterface} from "../../interface/SoftwareInterface";
 
-const Software: FC = () => {
+interface SoftwareFC {
+  software: SoftwareInterface[]
+}
+
+const Software: FC<SoftwareFC> = ({ software}) => {
+  const toCropText = (str: string, crop: number): string => {
+    return str.length > crop ? `${str.slice(1, crop)}...` : str;
+  }
+
   return <section className={style.software}>
     <div className={style.software__header}>
       <h3 className={'cap__header'}><span className={'cap__header--highlight'}>All-In-One</span> Cloud Software.</h3>
@@ -9,32 +18,16 @@ const Software: FC = () => {
     </div>
     <div className={style.software__cards}>
 
-      <div className={style['software-card']}>
-        <picture>
-          <source srcSet={"/svg/doc.svg"} media="(max-width:1024px)" width={80} height={80}/>
-          <img className={style['software-card__picture']} src={"/svg/doc.svg"} alt='symbol' width={100} height={100}/>
-        </picture>
-        <h4 className={style['software-card__h4']}>Online Billing, Invoicing, & Contracts</h4>
-        <span className={style['software-card__span']}>Simple and secure control of your organization’s financial and legal transactions. Send customized invoices and contracts</span>
-      </div>
-
-      <div className={style['software-card']}>
-        <picture>
-          <source srcSet={"/svg/date.svg"} media="(max-width:1024px)" width={80} height={80}/>
-          <img className={style['software-card__picture']} src={"/svg/date.svg"} alt='symbol' width={100} height={100}/>
-        </picture>
-        <h4 className={style['software-card__h4']}>Easy Scheduling & Attendance Tracking</h4>
-        <span className={style['software-card__span']}>Schedule and reserve classrooms at one campus or multiple campuses. Keep detailed records of student attendance</span>
-      </div>
-
-      <div className={style['software-card']}>
-        <picture>
-          <source srcSet={"/svg/community.svg"} media="(max-width:1024px)" width={80} height={80}/>
-          <img className={style['software-card__picture']} src={"/svg/community.svg"} alt='symbol' width={100} height={100}/>
-        </picture>
-        <h4 className={style['software-card__h4']}>Customer Tracking</h4>
-        <span className={style['software-card__span']}>Automate and track emails to individuals or groups. Skilline’s built-in system helps organize your organization </span>
-      </div>
+      { software.map((soft: SoftwareInterface, index: number) => (
+        <div className={style['software-card']} key={`${soft.title}-${index}`} role="software">
+          <picture>
+            <source srcSet={"/svg/doc.svg"} media="(max-width:1024px)" width={80} height={80}/>
+            <img className={style['software-card__picture']} src={`/svg/${soft.img}`} alt='symbol' width={100} height={100}/>
+          </picture>
+          <h4 className={style['software-card__h4']}>{toCropText(soft.title, 60)}</h4>
+          <span className={style['software-card__span']}>{toCropText(soft.text, 100)}</span>
+        </div>
+      ))}
 
     </div>
   </section>
