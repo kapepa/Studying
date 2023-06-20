@@ -4,8 +4,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {ResponsiveInterface} from "../../interface/ResponsiveInterface";
+import {StudentInterface} from "../../interface/StudentInterface";
 
-const Students: FC = () => {
+interface StudentsFC {
+  students: StudentInterface[]
+}
+
+const Students: FC<StudentsFC> = ({students}) => {
   const responsive: ResponsiveInterface[] = [
     {
       breakpoint: 1024,
@@ -19,7 +24,11 @@ const Students: FC = () => {
         slidesToShow: 1,
       }
     },
-  ]
+  ];
+
+  const toCropString = (str: string, crop: number): string => {
+    return str.length >= crop ? `${str.slice(1,crop)}...` : str ;
+  }
 
   const SampleNextArrow: FC = ({onClick}: { onClick: () => {} }) => {
     return <div className={style.students__next} onClick={onClick}/>;
@@ -28,7 +37,6 @@ const Students: FC = () => {
   const SamplePrevArrow: FC = ({onClick}: { onClick: () => {} }) => {
     return <div className={style.students__prev} onClick={onClick}/>;
   }
-
 
   return <section className={style.students}>
     <h4 className='h-bold'>What our students have to say</h4>
@@ -43,55 +51,17 @@ const Students: FC = () => {
         prevArrow={<SamplePrevArrow/>}
       >
 
-        <div className={style.students__wrapper}>
-          <div className={style.students__card}>
-            <div className={style.students__frame}>
-              <img className={style.students__avatar} src={'/image/avatar.png'} alt={'avatar'}/>
+        { students.map((student: StudentInterface, index: number) => (
+          <div className={style.students__wrapper} key={`${student.user.name}-${index}`} role="student">
+            <div className={style.students__card}>
+              <div className={style.students__frame}>
+                <img className={style.students__avatar} src={`/image/${student.user.avatar}`} alt={'avatar'}/>
+              </div>
+              <h5 className={style.students__name}>{student.user.name}</h5>
+              <span className={style.students__message}>{toCropString(student.text, 50)}</span>
             </div>
-            <h5 className={style.students__name}>Bulkin Simons</h5>
-            <span className={style.students__message}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod</span>
           </div>
-        </div>
-
-        <div className={style.students__wrapper}>
-          <div className={style.students__card}>
-            <div className={style.students__frame}>
-              <img className={style.students__avatar} src={'/image/avatar.png'} alt={'avatar'}/>
-            </div>
-            <h5 className={style.students__name}>Bulkin Simons</h5>
-            <span className={style.students__message}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod</span>
-          </div>
-        </div>
-
-        <div className={style.students__wrapper}>
-          <div className={style.students__card}>
-            <div className={style.students__frame}>
-              <img className={style.students__avatar} src={'/image/avatar.png'} alt={'avatar'}/>
-            </div>
-            <h5 className={style.students__name}>Bulkin Simons</h5>
-            <span className={style.students__message}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod</span>
-          </div>
-        </div>
-
-        <div className={style.students__wrapper}>
-          <div className={style.students__card}>
-            <div className={style.students__frame}>
-              <img className={style.students__avatar} src={'/image/avatar.png'} alt={'avatar'}/>
-            </div>
-            <h5 className={style.students__name}>Bulkin Simons</h5>
-            <span className={style.students__message}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod</span>
-          </div>
-        </div>
-
-        <div className={style.students__wrapper}>
-          <div className={style.students__card}>
-            <div className={style.students__frame}>
-              <img className={style.students__avatar} src={'/image/avatar.png'} alt={'avatar'}/>
-            </div>
-            <h5 className={style.students__name}>Bulkin Simons</h5>
-            <span className={style.students__message}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod</span>
-          </div>
-        </div>
+        )) }
 
       </Slider>
     </div>

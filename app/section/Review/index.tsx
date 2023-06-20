@@ -4,7 +4,6 @@ import BtnDefault from "../../component/BtnDefault";
 
 const Review: FC = () => {
 
-
   return <section className={style.review}>
     <div className={style.review__preview}>
       <span className={style.review__title}>TESTIMONIAL</span>
