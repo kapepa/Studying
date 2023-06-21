@@ -2,7 +2,7 @@ import "@testing-library/jest-dom";
 import {render, screen, fireEvent} from "@testing-library/react";
 import News from "../../section/News";
 import {NewsInterface} from "../../interface/NewsInterface";
-import React, from "react";
+import React from "react";
 import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 
 const news: NewsInterface = {
