@@ -1,8 +1,7 @@
 import "@testing-library/jest-dom";
-import {render, screen, fireEvent, findAllByAltText, act} from "@testing-library/react";
+import {render, screen} from "@testing-library/react";
 import Exhibition from "../../section/Exhibition";
 import {LotInterface} from "../../interface/LotInterface";
-import Pagination from "../../component/Pagination";
 
 jest.mock("../../component/Pagination",() => jest.fn(({max, changePage, currentPage}) => {
   return <div data-testid="pagination">Pagination</div>

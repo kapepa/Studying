@@ -4,6 +4,21 @@ import { useForm } from "react-hook-form";
 import {RegisterOptions, ValidationRule} from "react-hook-form/dist/types/validator";
 import {InputType} from "../../type/InputType";
 
+const patterns: PatternsType = {
+  required: {
+    value: true, message: "This field is required"
+  },
+  email: {
+    pattern: {value: /\S+@\S+\.\S+/, message: "Entered value does not match email format"}
+  },
+  minLength: {
+    value: 5, message: 'Min length exceeded'
+  },
+  maxLength: {
+    value: 20, message: 'Max length exceeded',
+  }
+}
+
 type SinglePatternsType = {
   value?: ValidationRule<RegExp> | number | boolean,
   message?: string,
@@ -21,24 +36,10 @@ interface FormDefaultInterface{
   title: string,
   inputs: InputType[],
   cb: (title: string, data: any) => void,
+  submitText?: string,
 }
 
-const patterns: PatternsType = {
-  required: {
-    value: true, message: "This field is required"
-  },
-  email: {
-    pattern: {value: /\S+@\S+\.\S+/, message: "Entered value does not match email format"}
-  },
-  minLength: {
-    value: 5, message: 'Min length exceeded'
-  },
-  maxLength: {
-    value: 20, message: 'Max length exceeded',
-  }
-}
-
-const FormDefault: FC<FormDefaultInterface> = ({title, inputs, cb}) => {
+const FormDefault: FC<FormDefaultInterface> = ({title, inputs, cb, submitText= "Submit"}) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => cb(title, data);
 
@@ -53,20 +54,23 @@ const FormDefault: FC<FormDefaultInterface> = ({title, inputs, cb}) => {
   return <div className={style['form-default']}>
     <h5 className={style['form-default__title']}>{title}</h5>
     <form className={style['form-default__form']} onSubmit={handleSubmit(onSubmit)}>
-      {inputs.map(((input: InputType, index: number) => <div key={`${input.name}-${index}`} className={style['form-default__cell']}>
-        <label className={style['form-default__label']} htmlFor={input.name}>{input.label}</label>
-        <input
-          className={style['form-default__input']}
-          id={input.name}
-          type={input.type}
-          name={input.name}
-          placeholder={input.placeholder}
-          {...register(input.name, { ...checkPattern(input.name, input.patterns) })}
-        />
-        {errors[input.name] && <span className={style['form-default__alert']}>{ errors[input.name].message?.toString() }</span>}
-      </div>))}
+      {/*{inputs.map(((input: InputType, index: number) => <div key={`${input.name}-${index}`} className={style['form-default__cell']}>*/}
+      {/*  <label className={style['form-default__label']} htmlFor={input.name}>{input.label}</label>*/}
+      {/*  <input*/}
+      {/*    className={style['form-default__input']}*/}
+      {/*    id={input.name}*/}
+      {/*    type={input.type}*/}
+      {/*    name={input.name}*/}
+      {/*    value=""*/}
+      {/*    placeholder={input.placeholder}*/}
+      {/*    {...register(input.name, { ...checkPattern(input.name, input.patterns) })}*/}
+      {/*    role={`input-${index}`}*/}
+      {/*  />*/}
+      {/*  {errors[input.name] && <span className={style['form-default__alert']} role="error">{ errors[input.name].message?.toString() }</span>}*/}
+      {/*</div>))}*/}
+      <input role={"input-0"} name="name" value=""/>
       <div className={style['form-default__basement']}>
-        <button className={style['form-default__submit']} type="submit">{title}</button>
+        <button className={style['form-default__submit']} type="submit">{submitText}</button>
       </div>
     </form>
   </div>

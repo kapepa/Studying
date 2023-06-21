@@ -46,12 +46,14 @@ const BtnDefault: FC<IBtnDefault> = ({text,  classAddition= "", type = "button",
     className={`${styles["btn-default"]} ${styles[shapeType]} ${styles[btnSize]} ${styles[btnBg]} ${classAddition}`}
     type={type}
     disabled={disabled}
+    role="btn"
   >{text}</button>
 
   const link = () => <Link
     href={href}
     onClick={click}
     className={`${styles["btn-default"]} ${styles[shapeType]} ${styles[btnSize]} ${styles[btnBg]} ${classAddition}`}
+    role="link"
   >{text}</Link>
 
   return (!!href ? link : button)();
