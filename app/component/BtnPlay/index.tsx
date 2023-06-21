@@ -31,9 +31,10 @@ const BtnPlay: FC<BtnPlayInterface> = ({size, cb, sizeTriangle}) => {
     onClick={clickPlay}
     className={styles['btn-play']}
     style={{maxHeight: size, maxWidth: size}}
+    role="btn"
   >
-    {!play && <div className={`${styles['btn-play__triangle']} ${styles[sizeTriangleClass]}`}/> }
-    { play && <div className={`${styles['btn-play__double-rectangle']} ${styles[sizeRectangleClass]}`} /> }
+    {!play && <div className={`${styles['btn-play__triangle']} ${styles[sizeTriangleClass]}`} role="triangle"/> }
+    { play && <div className={`${styles['btn-play__double-rectangle']} ${styles[sizeRectangleClass]}`} role="double"/> }
   </button>
 }
 
