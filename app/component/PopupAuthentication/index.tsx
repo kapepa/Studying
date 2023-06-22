@@ -3,6 +3,7 @@ import style from "./style.module.scss";
 import classNames from "classnames";
 import FormDefault from "../FormDefault";
 import {InputType} from "../../type/InputType";
+import axios from "axios";
 
 type typeMode = 'login' | 'register';
 
@@ -18,12 +19,18 @@ const PopupAuthentication: FC = () => {
     setMode((e.currentTarget.name as typeMode));
   }
 
-  const submit = (title: string, data: any) => {
-    console.log(title)
-    console.log(data)
+  const submit = async (title: string, data: any) => {
+    try {
+      await axios.post('https://jsonplaceholder.typicode.com/posts', {   headers: { 'Content-type': 'application/json; charset=UTF-8' } }).then(() => {
+        // console.log(title)
+        // console.log(data)
+      });
+    } catch (e) {
+      console.error('Something went to wrong!')
+    }
   }
 
-  return <div className={style['popup-authentication']}>
+  return <div className={style['popup-authentication']} role={"popup"}>
     <div className={style['popup-authentication__window']}>
       <h5 className={style['popup-authentication__h']}>Welcome</h5>
       <div className={style['popup-authentication__toggle']}>

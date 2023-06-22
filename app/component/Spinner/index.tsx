@@ -2,7 +2,7 @@ import {FC} from "react";
 import style from "./style.module.scss";
 
 const Spinner: FC = () => {
-  return <div className={style.spinner}>
+  return <div className={style.spinner} role="spinner">
     <div className={style.spinner__rotate}>Loading...</div>
   </div>
 }
