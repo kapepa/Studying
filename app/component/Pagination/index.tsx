@@ -33,12 +33,12 @@ const Pagination: FC<PaginationInterface> = ({max, changePage, currentPage}) => 
     </>
   }
 
-  return <div className={styles.pagination}>
-    <div onClick={clickSiblings} className={`${styles.pagination__square} ${styles['pagination__square--pointer']} ${styles.pagination__edge} ${styles['pagination__edge--left']}`} data-siblings={'-'}/>
+  return <div className={styles.pagination} role="pagination">
+    <div onClick={clickSiblings} className={`${styles.pagination__square} ${styles['pagination__square--pointer']} ${styles.pagination__edge} ${styles['pagination__edge--left']}`} data-siblings={'-'} role="prev"/>
     <PrevNavigate currentPage={currentPage} clickPage={clickPage}/>
-    <div className={`${styles.pagination__square} ${styles['pagination__square--active']}`}>{currentPage}</div>
+    <div className={`${styles.pagination__square} ${styles['pagination__square--active']}`} role="current">{currentPage}</div>
     <NestNavigate currentPage={currentPage} clickPage={clickPage} max={max}/>
-    <div onClick={clickSiblings} className={`${styles.pagination__square} ${styles['pagination__square--pointer']} ${styles.pagination__edge} ${styles['pagination__edge--right']}`} data-siblings={'+'}/>
+    <div onClick={clickSiblings} className={`${styles.pagination__square} ${styles['pagination__square--pointer']} ${styles.pagination__edge} ${styles['pagination__edge--right']}`} data-siblings={'+'} role="next"/>
   </div>
 }
 
