@@ -45,10 +45,10 @@ const PanelNav: FC<PanelNavInterface> = ({theme}) => {
   }, [bodyLayout.bodyClick]);
 
   return (
-    <div className={styles.panel}>
+    <div className={styles.panel} role={"nav"}>
       <div className="container">
         <div className={styles.panel__toolbar}>
-          <Link className={styles['panel__login-link']} href="/home">
+          <Link className={styles['panel__login-link']} href="/home" role="loging">
             <picture>
               <source srcSet={logoPath} media={'(max-width : 425px)'} width={76} height={59}/>
               <source srcSet={logoPath} media={'(max-width : 1024px)'} width={90} height={70}/>

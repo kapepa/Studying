@@ -34,11 +34,14 @@ const InputSearch: FC<InputSearchInterface> = ({cd, toSearch}) => {
       placeholder={"Search your favourite course"}
       defaultValue={input || toSearch}
       key={input || toSearch}
+      role="input"
     />
     <button
       onClick={onSearch}
       className={styles['input-search__btn']}
-      type={"button"}>Search</button>
+      type={"button"}
+      role="button"
+    >Search</button>
   </div>
 }
 

@@ -28,6 +28,7 @@ const InputDefault: FC<InputDefaultInterface> = (
   return <div className={styles['input-def']}>
     <label className={styles['input-def__label']} htmlFor={id}>{title}</label>
     <input
+      role="input"
       id={id}
       type={type}
       maxLength={maxLength.value}

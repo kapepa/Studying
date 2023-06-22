@@ -30,13 +30,13 @@ const PopupSpeaker: FC<PopupSpeakerInterface> = ({loader, controlLoader}) => {
     controlLoader();
   }, [])
 
-  return <div className={`${style['popup-speaker']} ${hidePopup}`} onClick={onCLose}>
+  return <div className={`${style['popup-speaker']} ${hidePopup}`} onClick={onCLose} role={"popup"}>
     <div className={style['popup-speaker__window']}>
       <div className={style['popup-speaker__x-close']}>
         <XClose onCd={onCLose}/>
       </div>
       <div className={style['popup-speaker__base']}>
-        <video onLoadedData={loadImages} ref={videoRef} className={style['popup-speaker__video']} >
+        <video onLoadedData={loadImages} ref={videoRef} className={style['popup-speaker__video']} role="video">
           <source  src={'/video/video_preview_h264.mp4'} width={960} height={540} type="video/mp4" media="(max-width:1025px)" />
           <source src={'/video/video_preview_h264.mp4'} type="video/mp4" media="(max-width:480px)" />
         </video>
@@ -48,7 +48,7 @@ const PopupSpeaker: FC<PopupSpeakerInterface> = ({loader, controlLoader}) => {
             <button className={style['popup-speaker__control']}>
               <img src={'/svg/microphone.svg'} alt={'microphone'}/>
             </button>
-            <button onClick={onCall} className={style['popup-speaker__control']}>
+            <button onClick={onCall} className={style['popup-speaker__control']} role={"phone"}>
               <img src={'/svg/phone.svg'} alt={'phone'}/>
             </button>
             <button className={style['popup-speaker__control']}>

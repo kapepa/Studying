@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import {render, screen, fireEvent} from "@testing-library/react";
 import Acquisition from "../../section/Acquisition";
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 
 jest.mock("../../component/InputDefault", () => jest.fn(({ id, type, title, isChange }) => {
   return <div>
