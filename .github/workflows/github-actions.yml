@@ -23,5 +23,5 @@ jobs:
         run: npm run build
       - name: app unit-test
         working-directory: ./app
-        run: npm run test
+        run: npm run test:all
 
