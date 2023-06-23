@@ -21,7 +21,7 @@ jobs:
       - name: app build
         working-directory: ./app
         run: npm run build
-      - mame: app unit_test
+      - mame: app unit test
         working-directory: ./app
         run: npm run test
 
