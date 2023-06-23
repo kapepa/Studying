@@ -10,15 +10,18 @@ on:
 jobs:
   init:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: ${{ matrix.node-version }}
       - name: app install
-        working-directory: ../app
+        working-directory: ./app
         run: npm run install
       - name: app build
-        working-directory: ../app
+        working-directory: ./app
         run: npm run build
 
