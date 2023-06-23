@@ -19,7 +19,7 @@ jobs:
       - run: bats -v
   app:
     steps:
-      - working-directory: ./app
+      - working-directory: /app
       - name: build
         run: npm run build
 
